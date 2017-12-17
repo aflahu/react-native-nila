@@ -18,7 +18,6 @@ class MenuDiagnosa extends Component {
   }
   onSubmit = () => {
     this.props.navigation.navigate('MenuHasil');
-    console.log('he');
   };
 
   render() {
