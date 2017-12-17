@@ -8,6 +8,30 @@ import Budidaya from '../menu/MenuDuniaIkan/Budidaya';
 import JenisJenis from '../menu/MenuDuniaIkan/JenisJenis';
 import Penyakit from '../menu/MenuDuniaIkan/Penyakit';
 import Klasifikasi from '../menu/MenuDuniaIkan/Klasifikasi';
+import Hasil from '../menu/MenuHasil/Hasil';
+import Cegah from '../menu/MenuHasil/Cegah';
+import Obat from '../menu/MenuHasil/Obat';
+
+const TabHasil = TabNavigator({
+  Hasil: {
+    screen: Hasil,
+    navigationOptions: {
+      tabBarLabel: 'Hasil'
+    }
+  },
+  Obat: {
+    screen: Obat,
+    navigationOptions: {
+      tabBarLabel: 'Obat'
+    }
+  },
+  Cegah: {
+    screen: Cegah,
+    navigationOptions: {
+      tabBarLabel: 'Pencegahan'
+    }
+  }
+});
 
 const TabDuniakan = TabNavigator(
   {
@@ -64,6 +88,12 @@ const Router = StackNavigator(
       screen: TabDuniakan,
       navigationOptions: {
         title: 'Dunia ikan'
+      }
+    },
+    MenuHasil: {
+      screen: TabHasil,
+      navigationOptions: {
+        title: 'Hasil Diagnosa'
       }
     }
   },

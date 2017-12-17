@@ -4,12 +4,23 @@ import { Card, Icon, CheckBox, Button } from 'react-native-elements';
 import Tombol from '../komponen/element/Tombol';
 
 class MenuDiagnosa extends Component {
-  static navigationOptions = {
-    headerRight: <Button title="submit" />
+  static navigationOptions = ({ navigation }) => {
+    const { params = {} } = navigation.state;
+    const headerRight = <Button title="submit" onPress={params.onSubmit} />;
+    return { headerRight };
   };
   state = {
     language: ''
   };
+  componentDidMount() {
+    // We can only set the function after the component has been initialized
+    this.props.navigation.setParams({ onSubmit: this.onSubmit });
+  }
+  onSubmit = () => {
+    this.props.navigation.navigate('MenuHasil');
+    console.log('he');
+  };
+
   render() {
     return (
       <ScrollView style={{ flex: 1 }}>
