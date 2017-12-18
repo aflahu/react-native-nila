@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, Picker, Image, ScrollView } from 'react-native';
-import { Card, Icon, CheckBox, Button } from 'react-native-elements';
-import Tombol from '../komponen/element/Tombol';
+import { Text, ScrollView } from 'react-native';
+import { Card, Icon, Button } from 'react-native-elements';
+// import Tombol from '../komponen/element/Tombol';
+import CheckList from '../komponen/CheckList';
 
 class MenuDiagnosa extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -10,7 +11,8 @@ class MenuDiagnosa extends Component {
     return { headerRight };
   };
   state = {
-    language: ''
+    language: '',
+    gambar: '../Gambar/nila2.jpg'
   };
   componentDidMount() {
     // We can only set the function after the component has been initialized
@@ -21,6 +23,7 @@ class MenuDiagnosa extends Component {
   };
 
   render() {
+    // const gambar = ;
     return (
       <ScrollView style={{ flex: 1 }}>
         <Card wrapperStyle={styles.info}>
@@ -28,70 +31,7 @@ class MenuDiagnosa extends Component {
           <Text>Pilih Gejala yang diderita ikan nila</Text>
         </Card>
         <Card wrapperStyle={styles.check}>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <Image style={{ width: 66, height: 58 }} source={require('../Gambar/nila2.jpg')} />
-            <CheckBox
-              containerStyle={{ flex: 1 }}
-              title="Mata Menonjol dan mata rusak seperti katarak"
-              checked={this.state.checked}
-            />
-          </View>
+          <CheckList gambar={require('../Gambar/nila2.jpg')} teks="katarak" checked={false} />
         </Card>
         {/* <View style={styles.kontrol}>
           <Icon raised name="keyboard-arrow-left" />
