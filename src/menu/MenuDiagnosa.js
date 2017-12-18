@@ -12,6 +12,7 @@ class MenuDiagnosa extends Component {
   };
   state = {
     language: '',
+    bool: false,
     gambar: '../Gambar/nila2.jpg'
   };
   componentDidMount() {
@@ -20,6 +21,9 @@ class MenuDiagnosa extends Component {
   }
   onSubmit = () => {
     this.props.navigation.navigate('MenuHasil');
+  };
+  onPress = () => {
+    this.setState({ bool: !this.state.bool });
   };
 
   render() {
@@ -31,20 +35,13 @@ class MenuDiagnosa extends Component {
           <Text>Pilih Gejala yang diderita ikan nila</Text>
         </Card>
         <Card wrapperStyle={styles.check}>
-          <CheckList gambar={require('../Gambar/nila2.jpg')} teks="katarak" checked={false} />
+          <CheckList
+            gambar={require('../Gambar/nila2.jpg')}
+            teks="katarak"
+            checked={this.state.bool}
+            onPress={this.onPress}
+          />
         </Card>
-        {/* <View style={styles.kontrol}>
-          <Icon raised name="keyboard-arrow-left" />
-          <Picker
-            style={styles.picker}
-            selectedValue={this.state.language}
-            onValueChange={(itemValue, itemIndex) => this.setState({ language: itemValue })}
-          >
-            <Picker.Item label="Halaman 1" value="1" />
-            <Picker.Item label="halaman 2" value="2" />
-          </Picker>
-          <Icon raised name="keyboard-arrow-right" />
-        </View> */}
       </ScrollView>
     );
   }
