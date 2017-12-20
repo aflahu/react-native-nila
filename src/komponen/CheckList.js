@@ -3,9 +3,6 @@ import { Image, View } from 'react-native';
 import { CheckBox } from 'react-native-elements';
 
 class CheckList extends Component {
-  // state = {
-  //   gambar: this.props.gambar
-  // };
   render() {
     const { teks, checked, gambar, onPress } = this.props;
     // const gambar = require(this.state.gambar);

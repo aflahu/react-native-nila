@@ -87,7 +87,7 @@ const Router = StackNavigator(
     MenuDuniaIkan: {
       screen: TabDuniakan,
       navigationOptions: {
-        title: 'Dunia ikan'
+        title: 'Dunia Ikan Nila'
       }
     },
     MenuHasil: {

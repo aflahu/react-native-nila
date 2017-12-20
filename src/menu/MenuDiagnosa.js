@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Text, ScrollView } from 'react-native';
+import { Text, ScrollView, FlatList } from 'react-native';
 import { Card, Icon, Button } from 'react-native-elements';
 // import Tombol from '../komponen/element/Tombol';
 import CheckList from '../komponen/CheckList';
+
+const data = require('../konfig/gejala.js').data;
 
 class MenuDiagnosa extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -13,17 +15,18 @@ class MenuDiagnosa extends Component {
   state = {
     language: '',
     bool: false,
-    gambar: '../Gambar/nila2.jpg'
+    data: []
   };
   componentDidMount() {
     // We can only set the function after the component has been initialized
     this.props.navigation.setParams({ onSubmit: this.onSubmit });
+    this.setState({ data });
   }
   onSubmit = () => {
     this.props.navigation.navigate('MenuHasil');
   };
   onPress = () => {
-    this.setState({ bool: !this.state.bool });
+    // this.setState({ data: });
   };
 
   render() {
@@ -35,11 +38,18 @@ class MenuDiagnosa extends Component {
           <Text>Pilih Gejala yang diderita ikan nila</Text>
         </Card>
         <Card wrapperStyle={styles.check}>
-          <CheckList
-            gambar={require('../Gambar/nila2.jpg')}
-            teks="katarak"
-            checked={this.state.bool}
-            onPress={this.onPress}
+          <FlatList
+            data={this.state.data}
+            renderItem={({ item }) => {
+              return (
+                <CheckList
+                  gambar={item.gambar}
+                  teks={item.teks}
+                  checked={item.check}
+                  onPress={this.onPress}
+                />
+              );
+            }}
           />
         </Card>
       </ScrollView>

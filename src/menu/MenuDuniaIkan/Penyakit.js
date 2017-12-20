@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { List, ListItem } from 'react-native-elements';
+import { Text, ScrollView, FlatList } from 'react-native';
+import { Card, ListItem } from 'react-native-elements';
 import { human } from 'react-native-typography';
+
+const penyakit = [
+  { key: 'Lernea' },
+  { key: 'Cacing Insang dan Kulit' },
+  { key: 'Becak merah' },
+  { key: 'Trichodina' },
+  { key: 'Saprolegenesis)' },
+  { key: 'Epstylis' },
+  { key: 'Bintik Putih' },
+  { key: 'Panducle' },
+  { key: 'Edward Siella' },
+  { key: 'Kutu Ikan' },
+  { key: 'Stereptococcosis' },
+  { key: 'Tilapia Like Virus' }
+];
 
 class Penyakit extends Component {
   render() {
     return (
-      <View style={{ marginTop: 20 }}>
-        <Text style={human.title2}>Jenis Jenis Penyakit</Text>
-        <List>
-          <ListItem title="Lernea" />
-          <ListItem title="Cacing dan Kulit" />
-          <ListItem title="Bercak Merah" />
-        </List>
-      </View>
+      <ScrollView style={{ flex: 1 }}>
+        <Card title="penyakit-penyakit Ikan Nila">
+          <FlatList data={penyakit} renderItem={({ item }) => <ListItem title={item.key} />} />
+        </Card>
+      </ScrollView>
     );
   }
 }
