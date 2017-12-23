@@ -14,8 +14,6 @@ import Obat from '../menu/MenuHasil/Obat';
 import Cacing from '../menu/MenuDuniaIkan/Cacing';
 import Lernea from '../menu/MenuDuniaIkan/Lernea';
 import Info from '../menu/MenuDuniaIkan/Info';
-import Benih from '../menu/MenuDuniaIkan/Benih';
-import Penebaran from '../menu/MenuDuniaIkan/Penebaran';
 
 const TabHasil = TabNavigator({
   Hasil: {
@@ -121,18 +119,6 @@ const Router = StackNavigator(
       navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.judul
       })
-    },
-    Benih: {
-      screen: Benih,
-      navigationOptions: {
-        title: 'Memilih Benih Ikan Nila'
-      }
-    },
-    Penebaran: {
-      screen: Penebaran,
-      navigationOptions: {
-        title: 'Penebaran Benih Ikan Nila'
-      }
     }
   },
   {
