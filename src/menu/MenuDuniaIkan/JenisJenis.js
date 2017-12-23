@@ -19,7 +19,7 @@ class JenisJenis extends Component {
             renderItem={({ item }) => (
               <ListItem
                 onPress={() =>
-                  this.props.navigation.navigate('InfoJenisIkan', {
+                  this.props.navigation.navigate('Info', {
                     judul: item.key,
                     isi: item.isi
                   })

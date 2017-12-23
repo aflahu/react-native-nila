@@ -4,7 +4,7 @@ import { Card } from 'react-native-elements';
 import { material } from 'react-native-typography';
 // import penyakit from '../../konfig/peyakit';
 
-class InfoJenisIkan extends Component {
+class Info extends Component {
   // onCompile = () => {
   //   return ;
   // };
@@ -20,4 +20,4 @@ class InfoJenisIkan extends Component {
     );
   }
 }
-export default InfoJenisIkan;
+export default Info;
