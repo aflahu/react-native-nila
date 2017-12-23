@@ -14,7 +14,7 @@ class MenuDiagnosa extends Component {
   };
   state = {
     language: '',
-    bool: false,
+    checked: [],
     data: []
   };
   componentDidMount() {
@@ -25,8 +25,16 @@ class MenuDiagnosa extends Component {
   onSubmit = () => {
     this.props.navigation.navigate('MenuHasil');
   };
-  onPress = () => {
-    // this.setState({ data: });
+  onPress = gejala => {
+    const dGejala = this.state.data;
+    const hasil = dGejala.map(item => {
+      if (item.key === gejala) {
+        item.check = !item.check;
+      }
+      return item;
+    });
+
+    this.setState({ data: hasil });
   };
 
   render() {
@@ -46,7 +54,7 @@ class MenuDiagnosa extends Component {
                   gambar={item.gambar}
                   teks={item.teks}
                   checked={item.check}
-                  onPress={this.onPress}
+                  onPress={() => this.onPress(item.key)}
                 />
               );
             }}
