@@ -13,7 +13,7 @@ import Cegah from '../menu/MenuHasil/Cegah';
 import Obat from '../menu/MenuHasil/Obat';
 import Cacing from '../menu/MenuDuniaIkan/Cacing';
 import Lernea from '../menu/MenuDuniaIkan/Lernea';
-import Nirwana from '../menu/MenuDuniaIkan/Nirwana';
+import InfoJenisIkan from '../menu/MenuDuniaIkan/InfoJenisIkan';
 import Benih from '../menu/MenuDuniaIkan/Benih';
 import Penebaran from '../menu/MenuDuniaIkan/Penebaran';
 
@@ -115,11 +115,12 @@ const Router = StackNavigator(
         title: 'Penyakit Cacing Insang dan Kulit '
       }
     },
-    Nirwana: {
-      screen: Nirwana,
-      navigationOptions: {
-        title: 'Nirwana'
-      }
+    InfoJenisIkan: {
+      screen: InfoJenisIkan,
+      path: '/InfoJenisIkan/:judul',
+      navigationOptions: ({ navigation }) => ({
+        title: navigation.state.params.judul
+      })
     },
     Benih: {
       screen: Benih,
