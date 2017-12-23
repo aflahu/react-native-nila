@@ -11,6 +11,11 @@ import Klasifikasi from '../menu/MenuDuniaIkan/Klasifikasi';
 import Hasil from '../menu/MenuHasil/Hasil';
 import Cegah from '../menu/MenuHasil/Cegah';
 import Obat from '../menu/MenuHasil/Obat';
+import Cacing from '../menu/MenuDuniaIkan/Cacing';
+import Lernea from '../menu/MenuDuniaIkan/Lernea';
+import Nirwana from '../menu/MenuDuniaIkan/Nirwana';
+import Benih from '../menu/MenuDuniaIkan/Benih';
+import Penebaran from '../menu/MenuDuniaIkan/Penebaran';
 
 const TabHasil = TabNavigator({
   Hasil: {
@@ -82,18 +87,50 @@ const Router = StackNavigator(
       screen: MenuDiagnosa,
       navigationOptions: {
         title: 'Diagnosa'
+        // headerStyle: { backgroundColor: 'red' }
       }
     },
     MenuDuniaIkan: {
       screen: TabDuniakan,
       navigationOptions: {
         title: 'Dunia Ikan Nila'
+        // headerStyle: { backgroundColor: '#3F51B5' }
       }
     },
     MenuHasil: {
       screen: TabHasil,
       navigationOptions: {
         title: 'Hasil Diagnosa'
+      }
+    },
+    Lernea: {
+      screen: Lernea,
+      navigationOptions: {
+        title: 'Penyakit Lernea'
+      }
+    },
+    Cacing: {
+      screen: Cacing,
+      navigationOptions: {
+        title: 'Penyakit Cacing Insang dan Kulit '
+      }
+    },
+    Nirwana: {
+      screen: Nirwana,
+      navigationOptions: {
+        title: 'Nirwana'
+      }
+    },
+    Benih: {
+      screen: Benih,
+      navigationOptions: {
+        title: 'Memilih Benih Ikan Nila'
+      }
+    },
+    Penebaran: {
+      screen: Penebaran,
+      navigationOptions: {
+        title: 'Penebaran Benih Ikan Nila'
       }
     }
   },
