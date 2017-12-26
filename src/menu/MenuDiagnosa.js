@@ -23,7 +23,7 @@ class MenuDiagnosa extends Component {
     this.setState({ data });
   }
   onSubmit = () => {
-    this.props.navigation.navigate('MenuHasil');
+    this.props.navigation.navigate('ModalLoading');
   };
   onPress = gejala => {
     const dGejala = this.state.data;

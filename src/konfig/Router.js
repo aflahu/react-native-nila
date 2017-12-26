@@ -14,6 +14,7 @@ import Obat from '../menu/MenuHasil/Obat';
 import Cacing from '../menu/MenuDuniaIkan/Cacing';
 import Lernea from '../menu/MenuDuniaIkan/Lernea';
 import Info from '../menu/MenuDuniaIkan/Info';
+import ModalLoading from '../menu/ModalLoading';
 
 const TabHasil = TabNavigator({
   Hasil: {
@@ -128,4 +129,15 @@ const Router = StackNavigator(
   }
 );
 
-export default Router;
+const Modal = StackNavigator(
+  {
+    Router: { screen: Router },
+    ModalLoading: { screen: ModalLoading }
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none'
+  }
+);
+
+export default Modal;
