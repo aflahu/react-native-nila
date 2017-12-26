@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
+import { TextLoader, RippleLoader } from 'react-native-indicator';
 
 class Hasil extends Component {
+  state = { isDone: false };
   render() {
+    if (!this.state.isDone) {
+      return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <RippleLoader size={70} />
+          <TextLoader text="Loading" />
+        </View>
+      );
+    }
     return (
       <Card>
         <Text style={{ marginBottom: 10 }}>
