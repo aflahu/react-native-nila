@@ -93,121 +93,127 @@ export const data = [
   },
   {
     key: 16,
-    teks: 'insang',
+    teks: 'Perut buncit',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 17,
-    teks: 'insang',
+    teks: 'Eksopthalmia atau mata menonjol dan mata rusak seperti katarak',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 18,
-    teks: 'insang',
+    teks: 'benang benang halus menyerupai kapas yang menempel pada kulit, sirip, kepala, dan tutup insang ikan',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 19,
-    teks: 'insang',
+    teks: 'Muncul bintik putih pada kulit, ekor, dan sirip',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 20,
-    teks: 'insang',
+    teks: 'Bintik putih ke abu-abuan dan disertai pendarahan di permukaan tubuh dan sirip ',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 21,
-    teks: 'insang',
+    teks: 'adanya putih seperti kapas yang tumbuh di kulit, sisik, dan sirip',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 22,
-    teks: 'insang',
+    teks: 'Pendarahan pada area tempat munculnya kapas',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 23,
-    teks: 'insang',
+    teks: 'Suhu air mencapai 16°C dan ikan malas bergerak atau berenang sehingga daya tahan tubuh lemah dan menyendiri',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 24,
-    teks: 'insang',
+    teks: 'Terdapatnya luka pada area ekor(penducle)',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 25,
-    teks: 'insang',
+    teks: 'luka luka pada bagian kulit dan meluas ke seluruh tubuh',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 26,
-    teks: 'insang',
+    teks: 'ada bisul atau nanah disekitar luka disertai bau busuk',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 27,
-    teks: 'insang',
+    teks: 'pada badan ikan di tempeli oleh kutu ikan',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 28,
-    teks: 'insang',
+    teks: 'Ikan nila kurus, berat ikan kurang dari 400 gr selama 4 bulan',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 29,
-    teks: 'insang',
+    teks: 'Adanya pendarahan pada bagian perut bawah',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 30,
-    teks: 'insang',
+    teks: 'Garis vertikal tubuh menghitam',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 31,
-    teks: 'insang',
+    teks: 'berenang berputar',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 32,
-    teks: 'insang',
+    teks: 'badan bengkok berbentuk “C”',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 33,
-    teks: 'insang',
+    teks: 'Ada bisul di atas kepala ikan',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 34,
-    teks: 'insang',
+    teks: 'kornea mata menyusut dan cekung ke dalam',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   },
   {
     key: 35,
-    teks: 'insang',
+    teks: 'rongga perut atau perut bagian bawah terlihat membengkak.',
+    gambar: require('../Gambar/nila2.jpg'),
+    check: false
+  },
+  {
+    key: 36,
+    teks: 'Adanya bisul di permukaan kulit',
     gambar: require('../Gambar/nila2.jpg'),
     check: false
   }
