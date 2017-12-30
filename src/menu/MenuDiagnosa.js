@@ -1,29 +1,32 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, FlatList } from 'react-native';
+import { Text, ScrollView, FlatList, View } from 'react-native';
 import { Card, Icon, Button } from 'react-native-elements';
 // import Tombol from '../komponen/element/Tombol';
 import CheckList from '../komponen/CheckList';
 
-const data = require('../konfig/gejala.js').data;
+const BaseData = require('../konfig/gejala.js').data;
 
 class MenuDiagnosa extends Component {
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state;
-    const headerRight = <Button title="submit" onPress={params.onSubmit} />;
+    const headerRight = (
+      <Button backgroundColor="transparent" title="submit" onPress={params.onSubmit} />
+    );
     return { headerRight };
   };
   state = {
-    language: '',
-    checked: [],
-    data: []
+    data: BaseData
   };
+
   componentDidMount() {
     // We can only set the function after the component has been initialized
     this.props.navigation.setParams({ onSubmit: this.onSubmit });
-    this.setState({ data });
+    // this.onReset();
   }
+
   onSubmit = () => {
     this.props.navigation.navigate('ModalLoading');
+    this.onReset();
   };
   onPress = gejala => {
     const dGejala = this.state.data;
@@ -37,14 +40,25 @@ class MenuDiagnosa extends Component {
     this.setState({ data: hasil });
   };
 
+  onReset = () => {
+    const bGejala = this.state.data;
+    const base = bGejala.map(item => {
+      if (item.check === true) {
+        item.check = false;
+      }
+      return item;
+    });
+    this.setState({ data: base });
+  };
+
   render() {
     // const gambar = ;
     return (
       <ScrollView style={{ flex: 1 }}>
-        <Card wrapperStyle={styles.info}>
+        <View style={styles.info}>
           <Icon name="info" style={styles.icon} />
           <Text>Pilih Gejala yang diderita ikan nila</Text>
-        </Card>
+        </View>
         <Card wrapperStyle={styles.check}>
           <FlatList
             data={this.state.data}
@@ -68,7 +82,9 @@ class MenuDiagnosa extends Component {
 const styles = {
   info: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginLeft: 15,
+    marginTop: 15
   },
   icon: {
     paddingRight: '20px'

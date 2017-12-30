@@ -8,15 +8,11 @@ class CheckList extends Component {
     // const gambar = require(this.state.gambar);
     return (
       <View style={{ flexDirection: 'row' }}>
-        <Image style={{ width: 66, height: 58 }} source={gambar} />
-        <CheckBox containerStyle={{ flex: 1 }} title={teks} checked={checked} onPress={onPress} />
+        <Image style={{ width: 66, height: 58, alignSelf: 'center' }} source={gambar} />
+        <CheckBox containerStyle={{ flex: 1, backgroundColor: 'white' }} title={teks} checked={checked} onPress={onPress} />
       </View>
     );
   }
 }
-
-// const styles = {
-//   root: {}
-// };
 
 export default CheckList;

@@ -85,33 +85,41 @@ const Router = StackNavigator(
     MenuDiagnosa: {
       screen: MenuDiagnosa,
       navigationOptions: {
-        title: 'Diagnosa'
-        // headerStyle: { backgroundColor: 'red' }
+        title: 'Diagnosa',
+        headerStyle: { backgroundColor: '#3F51B5' },
+        headerTintColor: 'white'
       }
     },
     MenuDuniaIkan: {
       screen: TabDuniakan,
       navigationOptions: {
-        title: 'Dunia Ikan Nila'
-        // headerStyle: { backgroundColor: '#3F51B5' }
+        title: 'Dunia Ikan Nila',
+        headerStyle: { backgroundColor: '#3F51B5' },
+        headerTintColor: 'white'
       }
     },
     MenuHasil: {
       screen: TabHasil,
       navigationOptions: {
-        title: 'Hasil Diagnosa'
+        title: 'Hasil Diagnosa',
+        headerStyle: { backgroundColor: '#3F51B5' },
+        headerTintColor: 'white'
       }
     },
     Lernea: {
       screen: Lernea,
       navigationOptions: {
-        title: 'Penyakit Lernea'
+        title: 'Penyakit Lernea',
+        headerStyle: { backgroundColor: '#3F51B5' },
+        headerTintColor: 'white'
       }
     },
     Cacing: {
       screen: Cacing,
       navigationOptions: {
-        title: 'Penyakit Cacing Insang dan Kulit '
+        title: 'Penyakit Cacing Insang dan Kulit ',
+        headerStyle: { backgroundColor: '#3F51B5' },
+        headerTintColor: 'white'
       }
     },
     Info: {
@@ -124,7 +132,8 @@ const Router = StackNavigator(
   },
   {
     cardStyle: {
-      paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+      marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+      // backgroundColor: '#3F51B5'
     }
   }
 );

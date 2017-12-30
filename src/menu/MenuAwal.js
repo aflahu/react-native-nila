@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <View style={styles.root}>
-        {/* <Image style={{ width: 100, height: 110 }} source={require('../Gambar/uin.jpg')} /> */}
+        <Image style={{ width: 100, height: 110 }} source={require('../Gambar/uin.jpg')} />
         <Text style={styles.title}>Sistem Pakar Diagnosa Ikan</Text>
         <Card containerStyle={styles.card} title="Pilihan Menu">
           <Tombol
