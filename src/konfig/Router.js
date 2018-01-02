@@ -16,26 +16,38 @@ import Lernea from '../menu/MenuDuniaIkan/Lernea';
 import Info from '../menu/MenuDuniaIkan/Info';
 import ModalLoading from '../menu/ModalLoading';
 
-const TabHasil = TabNavigator({
-  Hasil: {
-    screen: Hasil,
-    navigationOptions: {
-      tabBarLabel: 'Hasil'
+const TabHasil = TabNavigator(
+  {
+    Hasil: {
+      screen: Hasil,
+      navigationOptions: {
+        tabBarLabel: 'Hasil'
+      }
+    },
+    Obat: {
+      screen: Obat,
+      navigationOptions: {
+        tabBarLabel: 'Obat'
+      }
+    },
+    Cegah: {
+      screen: Cegah,
+      navigationOptions: {
+        tabBarLabel: 'Pencegahan'
+      }
     }
   },
-  Obat: {
-    screen: Obat,
-    navigationOptions: {
-      tabBarLabel: 'Obat'
-    }
-  },
-  Cegah: {
-    screen: Cegah,
-    navigationOptions: {
-      tabBarLabel: 'Pencegahan'
+  {
+    tabBarOptions: {
+      labelStyle: {
+        fontSize: 12
+      },
+      inactiveTintColor: '#212121',
+      activeTintColor: 'white',
+      indicatorStyle: { backgroundColor: 'white' }
     }
   }
-});
+);
 
 const TabDuniakan = TabNavigator(
   {
@@ -68,7 +80,10 @@ const TabDuniakan = TabNavigator(
     tabBarOptions: {
       labelStyle: {
         fontSize: 12
-      }
+      },
+      inactiveTintColor: '#212121',
+      activeTintColor: 'white',
+      indicatorStyle: { backgroundColor: 'white' }
     }
   }
 );
@@ -126,7 +141,9 @@ const Router = StackNavigator(
       screen: Info,
       path: '/Info/:judul',
       navigationOptions: ({ navigation }) => ({
-        title: navigation.state.params.judul
+        title: navigation.state.params.judul,
+        headerStyle: { backgroundColor: '#3F51B5' },
+        headerTintColor: 'white'
       })
     }
   },

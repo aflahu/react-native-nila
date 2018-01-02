@@ -9,7 +9,7 @@ class CheckList extends Component {
     return (
       <View style={{ flexDirection: 'row' }}>
         <Image style={{ width: 66, height: 58, alignSelf: 'center' }} source={gambar} />
-        <CheckBox containerStyle={{ flex: 1, backgroundColor: 'white' }} title={teks} checked={checked} onPress={onPress} />
+        <CheckBox containerStyle={{ flex: 1, backgroundColor: 'white' }} checkedColor='#3F51B5' title={teks} checked={checked} onPress={onPress} />
       </View>
     );
   }

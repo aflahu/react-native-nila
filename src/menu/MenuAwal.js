@@ -20,13 +20,13 @@ class App extends Component {
         <Card containerStyle={styles.card} title="Pilihan Menu">
           <Tombol
             gaya={styles.button}
-            warnaDasar="#6186E8"
+            warnaDasar="#3F51B5"
             ikon="search"
             teks="Diagnosa"
             onTekan={this.onDiagnosa}
           />
           <Tombol
-            warnaDasar="#6186E8"
+            warnaDasar="#3F51B5"
             ikon="info-outline"
             teks="Dunia Ikan"
             onTekan={this.onDuniaIkan}
@@ -42,11 +42,11 @@ const styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#D4EAF7'
+    backgroundColor: 'white'
   },
   card: {
     width: '80%',
-    backgroundColor: '#EAF3FB',
+    // backgroundColor: '#EAF3FB',
     borderRadius: 10
   },
   title: {
