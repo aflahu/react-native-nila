@@ -7,7 +7,6 @@ const budidaya = require('../../konfig/budidaya.json');
 
 class Budidaya extends Component {
   render() {
-    console.log(budidaya);
     return (
       <ScrollView style={{ flex: 1 }}>
         <Card title="Budidaya Ikan Nila">

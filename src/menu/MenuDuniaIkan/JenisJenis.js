@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { ScrollView, FlatList } from 'react-native';
+import { ScrollView, FlatList, Image, View } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
 import { material } from 'react-native-typography';
+import ListInfo from '../../komponen/ListInfo';
 
 const jenis = require('../../konfig/jenis');
 
 class JenisJenis extends Component {
   render() {
-    console.log(jenis);
     return (
       <ScrollView>
         {/* <Text style={material.display1}> Jenis-jenis Ikan Nila</Text> */}
@@ -17,14 +17,15 @@ class JenisJenis extends Component {
             data={jenis.data}
             underlayColor="blue"
             renderItem={({ item }) => (
-              <ListItem
+              <ListInfo
                 onPress={() =>
                   this.props.navigation.navigate('Info', {
                     judul: item.key,
                     isi: item.isi
                   })
                 }
-                title={item.key}
+                teks={item.key}
+                gambar={item.gambar}
               />
             )}
           />
