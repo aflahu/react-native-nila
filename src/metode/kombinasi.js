@@ -44,5 +44,5 @@ const kali = (g1, g2) => {
   const densitas = g1.belief * g2.belief;
   return [{ penyakit: g2.penyakit, densitas }, { penyakit, densitas }];
 };
-
+//
 console.log(kombinasi(gejala[0], gejala[1]));
