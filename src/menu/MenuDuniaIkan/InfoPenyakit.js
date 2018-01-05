@@ -5,7 +5,6 @@ import { material } from 'react-native-typography';
 
 class InfoPenyakit extends Component {
   render() {
-    console.log(this.props.navigation.state.params.isi);
     return (
       <View>
         <FlatList
