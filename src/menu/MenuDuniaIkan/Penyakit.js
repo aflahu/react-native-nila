@@ -4,11 +4,11 @@ import { Card, ListItem } from 'react-native-elements';
 import { human } from 'react-native-typography';
 
 const penyakit = [
-  { key: 'Lernea', open: 'Lernea' },
-  { key: 'Cacing Insang dan Kulit', open: 'Cacing' },
+  { key: 'Lernea' },
+  { key: 'Cacing Insang dan Kulit' },
   { key: 'Becak merah' },
   { key: 'Trichodina' },
-  { key: 'Saprolegenesis)' },
+  { key: 'Saprolegenesis' },
   { key: 'Epstylis' },
   { key: 'Bintik Putih' },
   { key: 'Panducle' },
@@ -18,6 +18,8 @@ const penyakit = [
   { key: 'Tilapia Like Virus' }
 ];
 
+const penyakitData = require('../../konfig/penyakit');
+
 class Penyakit extends Component {
   render() {
     return (
@@ -25,9 +27,14 @@ class Penyakit extends Component {
         <Card title="penyakit-penyakit Ikan Nila">
           <FlatList
             data={penyakit}
-            renderItem={({ item }) => (
+            renderItem={({ item, index }) => (
               <ListItem
-                onPress={() => this.props.navigation.navigate(item.open)}
+                onPress={() =>
+                  this.props.navigation.navigate('InfoPenyakit', {
+                    judul: item.key,
+                    isi: penyakitData.data[index].data
+                  })
+                }
                 title={item.key}
               />
             )}

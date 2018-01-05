@@ -1,5 +1,7 @@
-export const data = [{
-    lernea:[{
+export const data = [
+  {
+    data: [
+      {
         key: 'Karakteristik',
         isi:
           '1) Parasit berbentuk jangkar/kail menempel pada permukaan tubuh, lubang hidung, pangkal sirip, insang, dan rongga pipi. <br/> 2) Pendarahan di area menempelnya parasit berbentuk jangkar'
@@ -19,8 +21,11 @@ export const data = [{
         isi:
           '1)	Ikan yang terserang diisolasi dari ikan yang lain. <br/> 2)	Manajemen pakan (kebersihan dan frekuensi pemberian makannya) <br/> 3)	Pengendapan dan penyaringan air masuk'
       }
-    }],
-    cacinginsangdankulit:[{
+    ]
+  },
+  {
+    data: [
+      {
         key: 'Karakteristik',
         isi:
           'Penyakit ini umumnya ditemui pada insang dan kulit ikan Nila. Parasit Dactylogyrus menyerang insang dan kulit ikan Nila. Sementara itu, Gyrodactylus menyerang bagian kulit saja.'
@@ -39,5 +44,7 @@ export const data = [{
         key: 'Pencegahan',
         isi:
           '1)	Frekuensi pergantian air lebih sering dengan suhu air >29° <br/> 2)	Berikan vitamin C untuk meningkatkan ketahanan tubuh.'
-      }]
-  }]
+      }
+    ]
+  }
+];

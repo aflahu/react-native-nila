@@ -1,7 +1,9 @@
-const { pSama, pBeda } = require('./arrayUtil');
+const {
+  pSama,
+  pBeda
+} = require('./arrayUtil');
 
-const gejala = [
-  {
+const gejala = [{
     key: 4,
     penyakit: [2, 5, 6, 8, 9, 10, 11, 12],
     belief: 0.3
@@ -24,13 +26,29 @@ const gejala = [
 // - totalin mPenyakit sama
 // - return mBaru
 
-const kombinasi = (g1, g2) => {
-  const mHasil = [];
-  mHasil.push(...kali(g1, g2));
-  mHasil.push(...kali({ penyakit: 0, belief: 1 - g1.belief }, g2));
+const kombinasi = (ms) => {
+  let mHasil = ms
+  let mBaru = [];
 
-  const mHasilClear = mHasil.filter(g => g.penyakit !== 0);
-  return mHasilClear;
+  for (let m = 0; m < ms.length - 1; m++) {
+    let bTotal = 0;
+    for (let g = m; g < mHasil.length - 1; g++) {
+      mBaru.push(...kali(mHasil[g], mHasil[g + 1]));
+      console.log('ulang g');
+      bTotal = bTotal + mHasil[g].belief
+    }
+    mBaru.push(...kali({
+      penyakit: 0,
+      belief: 1 - bTotal
+    }, mHasil[mHasil.length - 1]));
+
+    mHasil = mBaru.filter(g => g.penyakit !== 0);
+    mBaru = [];
+    console.log('ulang m');
+  }
+
+
+  console.log(mHasil);
 };
 
 const kali = (g1, g2) => {
@@ -38,11 +56,25 @@ const kali = (g1, g2) => {
     const allG = g1.penyakit.concat(g2.penyakit);
     const penyakit = pSama(allG);
     const densitas = g1.belief * g2.belief;
-    return [{ penyakit, densitas }, { penyakit: g1.penyakit, densitas }];
+    return [{
+      penyakit,
+      densitas
+    }, {
+      penyakit: g1.penyakit,
+      densitas
+    }];
   }
   const penyakit = 0;
   const densitas = g1.belief * g2.belief;
-  return [{ penyakit: g2.penyakit, densitas }, { penyakit, densitas }];
+  return [{
+    penyakit: g2.penyakit,
+    densitas
+  }, {
+    penyakit,
+    densitas
+  }];
 };
 //
-console.log(kombinasi(gejala[0], gejala[1]));
+// console.log(kombinasi([gejala[0], gejala[1]]));
+kombinasi([gejala[0], gejala[1]])
+// kombinasi(gejala)

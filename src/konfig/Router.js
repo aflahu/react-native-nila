@@ -11,9 +11,8 @@ import Klasifikasi from '../menu/MenuDuniaIkan/Klasifikasi';
 import Hasil from '../menu/MenuHasil/Hasil';
 import Cegah from '../menu/MenuHasil/Cegah';
 import Obat from '../menu/MenuHasil/Obat';
-import Cacing from '../menu/MenuDuniaIkan/Cacing';
-import Lernea from '../menu/MenuDuniaIkan/Lernea';
 import Info from '../menu/MenuDuniaIkan/Info';
+import InfoPenyakit from '../menu/MenuDuniaIkan/InfoPenyakit';
 import ModalLoading from '../menu/ModalLoading';
 
 const TabHasil = TabNavigator(
@@ -121,25 +120,18 @@ const Router = StackNavigator(
         headerTintColor: 'white'
       }
     },
-    Lernea: {
-      screen: Lernea,
-      navigationOptions: {
-        title: 'Penyakit Lernea',
-        headerStyle: { backgroundColor: '#3F51B5' },
-        headerTintColor: 'white'
-      }
-    },
-    Cacing: {
-      screen: Cacing,
-      navigationOptions: {
-        title: 'Penyakit Cacing Insang dan Kulit ',
-        headerStyle: { backgroundColor: '#3F51B5' },
-        headerTintColor: 'white'
-      }
-    },
     Info: {
       screen: Info,
       path: '/Info/:judul',
+      navigationOptions: ({ navigation }) => ({
+        title: navigation.state.params.judul,
+        headerStyle: { backgroundColor: '#3F51B5' },
+        headerTintColor: 'white'
+      })
+    },
+    InfoPenyakit: {
+      screen: InfoPenyakit,
+      path: '/InfoPenyakit/:judul',
       navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.judul,
         headerStyle: { backgroundColor: '#3F51B5' },
