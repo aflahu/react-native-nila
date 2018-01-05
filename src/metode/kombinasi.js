@@ -1,9 +1,7 @@
-const {
-  pSama,
-  pBeda
-} = require('./arrayUtil');
+const { pSama, pBeda } = require('./arrayUtil');
 
-const gejala = [{
+const gejala = [
+  {
     key: 4,
     penyakit: [2, 5, 6, 8, 9, 10, 11, 12],
     belief: 0.3
@@ -26,55 +24,70 @@ const gejala = [{
 // - totalin mPenyakit sama
 // - return mBaru
 
-const kombinasi = (ms) => {
-  let mHasil = ms
+const kombinasi = async (ms, gk) => {
+  let mHasil = ms;
   let mBaru = [];
 
   for (let m = 0; m < ms.length - 1; m++) {
     let bTotal = 0;
     for (let g = m; g < mHasil.length - 1; g++) {
-      mBaru.push(...kali(mHasil[g], mHasil[g + 1]));
-      console.log('ulang g');
-      bTotal = bTotal + mHasil[g].belief
+      const data = await kali(mHasil[g], gk);
+      await mBaru.push(...data);
+      bTotal += mHasil[g].belief;
     }
-    mBaru.push(...kali({
-      penyakit: 0,
-      belief: 1 - bTotal
-    }, mHasil[mHasil.length - 1]));
+    const data = await kali(
+      {
+        penyakit: 0,
+        belief: 1 - bTotal
+      },
+      gk
+    );
+    await mBaru.push(...data);
 
-    mHasil = mBaru.filter(g => g.penyakit !== 0);
+    mHasil = await mBaru.filter(g => g.penyakit !== 0);
     mBaru = [];
-    console.log('ulang m');
   }
 
-
-  console.log(mHasil);
+  return mHasil;
 };
 
-const kali = (g1, g2) => {
+const kali = async (g1, g2) => {
   if (g1.penyakit !== 0) {
-    const allG = g1.penyakit.concat(g2.penyakit);
-    const penyakit = pSama(allG);
-    const densitas = g1.belief * g2.belief;
-    return [{
-      penyakit,
-      densitas
-    }, {
-      penyakit: g1.penyakit,
-      densitas
-    }];
+    const allG = await g1.penyakit.concat(g2.penyakit);
+    const penyakit = await pSama(allG);
+    const belief = g1.belief * g2.belief;
+    await console.log(belief);
+    return [
+      {
+        penyakit,
+        belief
+      },
+      {
+        penyakit: g1.penyakit,
+        belief
+      }
+    ];
   }
   const penyakit = 0;
-  const densitas = g1.belief * g2.belief;
-  return [{
-    penyakit: g2.penyakit,
-    densitas
-  }, {
-    penyakit,
-    densitas
-  }];
+  const belief = g1.belief * g2.belief;
+  await console.log(belief);
+  return [
+    {
+      penyakit: g2.penyakit,
+      belief
+    },
+    {
+      penyakit,
+      belief
+    }
+  ];
 };
 //
 // console.log(kombinasi([gejala[0], gejala[1]]));
-kombinasi([gejala[0], gejala[1]])
-// kombinasi(gejala)
+const mulai = async () => {
+  const hasil = await kombinasi([gejala[0], gejala[1]], gejala[1]);
+  console.log(hasil);
+  const hasil2 = await kombinasi(hasil, gejala[2]);
+  console.log(hasil2);
+};
+mulai().catch(e => console.log(e));
