@@ -1,4 +1,4 @@
-const { pSama, pBeda } = require('./arrayUtil');
+const { pSama, totalinSama } = require('./arrayUtil');
 
 const gejala = [
   {
@@ -79,10 +79,29 @@ const kali = async (g1, g2) => {
   ];
 };
 
-const mulai = async () => {
-  const hasil = await kombinasi(gejala[0], gejala[1]);
-  console.log(hasil);
-  const hasil2 = await kombinasi(hasil, gejala[2]);
-  console.log(hasil2);
+const mulai = async gej => {
+  // const hasil = await kombinasi(gejala[0], gejala[1]);
+  // console.log(hasil);
+  // const hasil2 = await kombinasi(hasil, gejala[2]);
+  // console.log(hasil2);
+  // const hasilTotal = await totalinSama(hasil2);
+  // console.log(hasilTotal);
+
+  let temp;
+  for (const [i, v] of gejala.entries()) {
+    if (i < gej.length - 1) {
+      if (!temp) {
+        const raw = await kombinasi(v, gejala[i + 1]);
+        // console.log(raw);
+        temp = await totalinSama(raw);
+        console.log(temp);
+      } else {
+        const raw = await kombinasi(temp, gejala[i + 1]);
+        // console.log(raw);
+        temp = await totalinSama(raw);
+        console.log(temp);
+      }
+    }
+  }
 };
-mulai().catch(e => console.log(e));
+mulai(gejala).catch(e => console.log(e));
