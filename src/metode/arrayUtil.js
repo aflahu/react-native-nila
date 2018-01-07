@@ -23,4 +23,21 @@ const totalinSama = a => {
     .value();
 };
 
-module.exports = { pSama, pBeda, totalinSama };
+const palingTinggi = a => {
+  return a.reduce((p, c) => {
+    if (p.belief > c.belief) {
+      return {
+        penyakit: p.penyakit,
+        belief: p.belief
+      };
+    }
+    return {
+      penyakit: c.penyakit,
+      belief: c.belief
+    };
+  });
+};
+
+// console.log(Math.max(0.7, 0.045));
+
+module.exports = { pSama, pBeda, totalinSama, palingTinggi };
