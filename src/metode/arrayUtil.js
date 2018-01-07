@@ -26,15 +26,9 @@ const totalinSama = a => {
 const palingTinggi = a => {
   return a.reduce((p, c) => {
     if (p.belief > c.belief) {
-      return {
-        penyakit: p.penyakit,
-        belief: p.belief
-      };
+      return p;
     }
-    return {
-      penyakit: c.penyakit,
-      belief: c.belief
-    };
+    return c;
   });
 };
 

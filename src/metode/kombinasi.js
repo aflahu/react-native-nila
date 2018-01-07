@@ -98,4 +98,5 @@ const mulai = async gej => {
   }
   console.log(palingTinggi(temp));
 };
+
 mulai(gejala).catch(e => console.log(e));
