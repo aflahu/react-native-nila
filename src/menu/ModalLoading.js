@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 // import { Card } from 'react-native-elements';
 import { TextLoader, RippleLoader } from 'react-native-indicator';
+import mulai from '../metode/kombinasi';
 
 class ModalLoading extends Component {
-  state = { isDone: false };
+  // static navigationOptions = ({ navigation }) => {
+  //   this.setState({ data: navigation.state.data });
+  // };
+  state = { isDone: false, data: [] };
 
   componentDidMount() {
+    this.setState({ data: this.props.navigation.state.params.data });
+    // console.log(this.props.navigation.state.params.data);
     this.onTunggu();
   }
   componentDidUpdate() {
@@ -16,9 +22,26 @@ class ModalLoading extends Component {
   }
 
   onTunggu = async () => {
-    setTimeout(() => {
-      this.setState({ isDone: true });
-    }, 3000);
+    const gejala = [
+      {
+        key: 4,
+        penyakit: [2, 5, 6, 8, 9, 10, 11, 12],
+        belief: 0.3
+      },
+      {
+        key: 5,
+        penyakit: [2, 3, 5, 6, 7, 11],
+        belief: 0.5
+      },
+      {
+        key: 32,
+        penyakit: [11],
+        belief: 0.7
+      }
+    ];
+    const hasil = await mulai(gejala).catch(e => console.log(e));
+    console.log(hasil);
+    this.setState({ isDone: true });
   };
 
   render() {

@@ -87,16 +87,18 @@ const mulai = async gej => {
         const raw = await kombinasi(v, gej[i + 1]);
         // console.log(raw);
         temp = await totalinSama(raw);
-        console.log(temp);
+        // console.log(temp);
       } else {
         const raw = await kombinasi(temp, gej[i + 1]);
         // console.log(raw);
         temp = await totalinSama(raw);
-        console.log(temp);
+        // console.log(temp);
       }
     }
   }
-  console.log(palingTinggi(temp));
+  return palingTinggi(temp);
 };
 
-mulai(gejala).catch(e => console.log(e));
+export default mulai;
+
+// mulai(gejala).catch(e => console.log(e));

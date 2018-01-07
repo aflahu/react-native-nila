@@ -150,7 +150,7 @@ const Router = StackNavigator(
 const Modal = StackNavigator(
   {
     Router: { screen: Router },
-    ModalLoading: { screen: ModalLoading }
+    ModalLoading: { path: 'ModalLoading/:data', screen: ModalLoading }
   },
   {
     mode: 'modal',
