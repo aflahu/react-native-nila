@@ -5,7 +5,6 @@ import { ListItem } from 'react-native-elements';
 class ListInfo extends Component {
   render() {
     const { teks, onPress, gambar } = this.props;
-    // const gambar = require(this.state.gambar);
     return (
       <View style={{ flexDirection: 'row', marginBottom: 10 }}>
         <Image
