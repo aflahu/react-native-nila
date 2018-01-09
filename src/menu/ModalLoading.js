@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import { TextLoader, RippleLoader } from 'react-native-indicator';
 import mulai from '../metode/kombinasi';
 
-const beliefj = require('../konfig/beliefj').data;
+const belief = require('../konfig/belief');
 
 class ModalLoading extends Component {
   // static navigationOptions = ({ navigation }) => {
@@ -29,13 +29,13 @@ class ModalLoading extends Component {
       const { data } = this.props.navigation.state.params;
       const idPilih = data.map(item => item.key);
 
-      const hasil = beliefj.filter((item, i) => {
+      const hasil = belief.filter((item, i) => {
         if (idPilih.includes(item.key)) {
-          return beliefj[i];
+          return belief[i];
         }
       });
       const diagnosa = await mulai(hasil);
-      console.log(diagnosa);
+      // console.log(diagnosa);
       this.setState({ isDone: true, diagnosa });
     } catch (error) {
       this.setState({ isDone: true });

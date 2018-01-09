@@ -25,7 +25,7 @@ const totalinSama = a => {
 
 const palingTinggi = a => {
   return a.reduce((p, c) => {
-    if (p.belief > c.belief) {
+    if (p.belief / p.penyakit.length > c.belief / c.penyakit.length) {
       return p;
     }
     return c;

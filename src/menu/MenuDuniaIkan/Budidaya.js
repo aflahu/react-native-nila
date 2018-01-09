@@ -3,7 +3,7 @@ import { Text, ScrollView, FlatList } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
 // import { human } from 'react-native-typography';
 
-const budidaya = require('../../konfig/budidaya.json');
+const budidaya = require('../../konfig/budidaya');
 
 class Budidaya extends Component {
   render() {

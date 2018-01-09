@@ -1,4 +1,4 @@
-const data = [
+const belief = [
   {
     key: 1,
     penyakit: [1],
@@ -31,18 +31,18 @@ const data = [
   },
   {
     key: 7,
-    penyakit: [2, 4, 5, 6, 10],
-    belief: 0.84
-  },
-  {
-    key: 8,
-    penyakit: [1],
+    penyakit: [2],
     belief: 0.2
   },
   {
-    key: 9,
+    key: 8,
     penyakit: [2, 4, 5, 6, 10],
     belief: 0.84
+  },
+  {
+    key: 9,
+    penyakit: [2],
+    belief: 0.2
   },
   {
     key: 10,
@@ -51,107 +51,107 @@ const data = [
   },
   {
     key: 11,
-    penyakit: [],
-    belief: 0.9
+    penyakit: [2, 10],
+    belief: 0.6
   },
   {
     key: 12,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [3, 5, 6, 7, 8, 9, 10, 12],
+    belief: 0.48
   },
   {
     key: 13,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [3, 11, 12],
+    belief: 0.77
   },
   {
     key: 14,
-    penyakit: [1],
+    penyakit: [3],
     belief: 0.9
   },
   {
     key: 15,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [3],
+    belief: 0.6
   },
   {
     key: 16,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [3],
+    belief: 0.3
   },
   {
     key: 17,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [3, 5, 11, 12],
+    belief: 0.68
   },
   {
     key: 18,
-    penyakit: [1],
+    penyakit: [4],
     belief: 0.9
   },
   {
     key: 19,
-    penyakit: [1],
+    penyakit: [5],
     belief: 0.9
   },
   {
     key: 20,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [6],
+    belief: 0.8
   },
   {
     key: 21,
-    penyakit: [1],
+    penyakit: [7],
     belief: 0.9
   },
   {
     key: 22,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [7],
+    belief: 0.8
   },
   {
     key: 23,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [8],
+    belief: 0.8
   },
   {
     key: 24,
-    penyakit: [1],
+    penyakit: [8],
     belief: 0.9
   },
   {
     key: 25,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [9],
+    belief: 0.8
   },
   {
     key: 26,
-    penyakit: [1],
+    penyakit: [9],
     belief: 0.9
   },
   {
     key: 27,
-    penyakit: [1],
+    penyakit: [10],
     belief: 0.9
   },
   {
     key: 28,
     penyakit: [1],
-    belief: 0.9
+    belief: 0.8
   },
   {
     key: 29,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [11],
+    belief: 0.6
   },
   {
     key: 30,
-    penyakit: [1],
+    penyakit: [11],
     belief: 0.9
   },
   {
     key: 31,
-    penyakit: [1],
+    penyakit: [11],
     belief: 0.9
   },
   {
@@ -161,23 +161,23 @@ const data = [
   },
   {
     key: 33,
-    penyakit: [1],
+    penyakit: [6],
     belief: 0.9
   },
   {
     key: 34,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [12],
+    belief: 0.8
   },
   {
     key: 35,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [12],
+    belief: 0.7
   },
   {
     key: 36,
-    penyakit: [1],
-    belief: 0.9
+    penyakit: [12],
+    belief: 0.5
   }
 ];
-module.exports = data;
+module.exports = belief;
