@@ -1,7 +1,10 @@
-const { pSama, totalinSama, palingTinggi } = require('./arrayUtil');
+const {
+  pSama,
+  totalinSama,
+  palingTinggi
+} = require('./arrayUtil');
 
-const gejala = [
-  {
+const gejala = [{
     key: 4,
     penyakit: [2, 5, 6, 8, 9, 10, 11, 12],
     belief: 0.3
@@ -18,7 +21,7 @@ const gejala = [
   }
 ];
 
-const kombinasi = async (ms, gk) => {
+const kombinasi = async(ms, gk) => {
   let mHasil = [];
   if (Array.isArray(ms)) {
     mHasil = ms;
@@ -34,8 +37,7 @@ const kombinasi = async (ms, gk) => {
       bTotal = await (bTotal + mHasil[g].belief);
     }
   }
-  const data2 = await kali(
-    {
+  const data2 = await kali({
       penyakit: 0,
       belief: 1 - bTotal
     },
@@ -49,13 +51,12 @@ const kombinasi = async (ms, gk) => {
   return await mHasil;
 };
 
-const kali = async (g1, g2) => {
+const kali = async(g1, g2) => {
   if (g1.penyakit !== 0) {
     const allG = await g1.penyakit.concat(g2.penyakit);
     const penyakit = await pSama(allG);
     const belief = g1.belief * g2.belief;
-    return await [
-      {
+    return await [{
         penyakit,
         belief
       },
@@ -67,8 +68,7 @@ const kali = async (g1, g2) => {
   }
   const penyakit = 0;
   const belief = g1.belief * g2.belief;
-  return await [
-    {
+  return await [{
       penyakit: g2.penyakit,
       belief
     },
@@ -96,9 +96,9 @@ const mulai = async gej => {
       }
     }
   }
+  console.log(temp);
   return palingTinggi(temp);
 };
 
-export default mulai;
-
-// mulai(gejala).catch(e => console.log(e));
+mulai(gejala).catch(e => console.log(e));
+// export default mulai;

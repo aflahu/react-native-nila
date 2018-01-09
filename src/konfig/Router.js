@@ -114,6 +114,7 @@ const Router = StackNavigator(
     },
     MenuHasil: {
       screen: TabHasil,
+      path: '/Menuhasil/:diagnosa',
       navigationOptions: {
         title: 'Hasil Diagnosa',
         headerStyle: { backgroundColor: '#3F51B5' },

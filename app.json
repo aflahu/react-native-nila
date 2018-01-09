@@ -1,5 +1,10 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0"
+    "name": "Nila",
+    "version": "1.0.0",
+    "sdkVersion": "23.0.0",
+    "android": {
+      "package": "com.yogierka.nila"
+    }
   }
 }
