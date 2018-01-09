@@ -3,30 +3,17 @@ import { Text, ScrollView, FlatList } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
 import { human } from 'react-native-typography';
 
-const penyakit = [
-  { key: 'Lernea' },
-  { key: 'Cacing Insang dan Kulit' },
-  { key: 'Becak merah' },
-  { key: 'Trichodina' },
-  { key: 'Saprolegenesis' },
-  { key: 'Epstylis' },
-  { key: 'Bintik Putih' },
-  { key: 'Panducle' },
-  { key: 'Edward Siella' },
-  { key: 'Kutu Ikan' },
-  { key: 'Stereptococcosis' },
-  { key: 'Tilapia Like Virus' }
-];
-
+const namaPenyakit = require('../../konfig/namaPenyakit').data;
 const penyakitData = require('../../konfig/penyakit');
 
 class Penyakit extends Component {
+  onAddKey = arr => arr.map(item => ({ key: item }));
   render() {
     return (
       <ScrollView style={{ flex: 1 }}>
         <Card title="penyakit-penyakit Ikan Nila">
           <FlatList
-            data={penyakit}
+            data={this.onAddKey(namaPenyakit)}
             renderItem={({ item, index }) => (
               <ListItem
                 onPress={() =>

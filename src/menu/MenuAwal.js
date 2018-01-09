@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, BackHandler } from 'react-native';
 import { Card } from 'react-native-elements';
 import { human } from 'react-native-typography';
 import Tombol from '../komponen/element/Tombol';
 
 class App extends Component {
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
   onDiagnosa = () => {
     this.props.navigation.navigate('MenuDiagnosa');
   };
   onDuniaIkan = () => {
     this.props.navigation.navigate('MenuDuniaIkan');
   };
+  handleBackButtonClick() {
+    BackHandler.exitApp();
+    return true;
+  }
 
   render() {
     return (
