@@ -9,11 +9,8 @@ import JenisJenis from '../menu/MenuDuniaIkan/JenisJenis';
 import Penyakit from '../menu/MenuDuniaIkan/Penyakit';
 import Klasifikasi from '../menu/MenuDuniaIkan/Klasifikasi';
 import Hasil from '../menu/MenuHasil/Hasil';
-import Cegah from '../menu/MenuHasil/Cegah';
-import Obat from '../menu/MenuHasil/Obat';
 import Info from '../menu/MenuDuniaIkan/Info';
 import InfoPenyakit from '../menu/MenuDuniaIkan/InfoPenyakit';
-import ModalLoading from '../menu/ModalLoading';
 
 // const TabHasil = TabNavigator(
 //   {

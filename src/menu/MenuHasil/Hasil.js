@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
 import { TextLoader, RippleLoader } from 'react-native-indicator';
-import mulai from '../../metode/kombinasi';
+import mulai from '../../metode/mulai';
 
 const belief = require('../../konfig/belief');
 const namaPenyakit = require('../../konfig/namaPenyakit').data;
@@ -28,11 +28,12 @@ class Hasil extends Component {
           return belief[i];
         }
       });
-      console.log(hasil);
+      // console.log(hasil);
       const diagnosa = await mulai(hasil);
+      // console.log(diagnosa);
       this.setState({
         loading: false,
-        diagnosa: { penyakit: diagnosa.penyakit, persen: diagnosa.belief }
+        diagnosa
       });
     } catch (error) {
       this.setState({ loading: false });
@@ -50,14 +51,14 @@ class Hasil extends Component {
       );
     }
     const { penyakit, persen } = this.state.diagnosa;
-    // console.log({ penyakit, persen });
+    console.log({ penyakit, persen });
     return (
       <Card>
         <Text style={{ marginBottom: 10 }}>
           Berdasarkan dari gejala-gejala yang dialami, ikan Nila anda terserang penyakit:
         </Text>
         <Text>
-          {namaPenyakit[penyakit]} : {(persen * 100).toFixed(2)}%
+          {namaPenyakit[Number(penyakit)]} : {(persen * 100).toFixed(2)}%
         </Text>
       </Card>
     );

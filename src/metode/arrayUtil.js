@@ -1,19 +1,19 @@
-// import _ from 'lodash';
-const _ = require('lodash');
+import _ from 'lodash';
+// const _ = require('lodash');
 
-const pBeda = a => {
+export const pBeda = a => {
   return a.sort().filter((item, pos, ary) => {
     return !pos || item !== ary[pos - 1];
   });
 };
 
-const pSama = a => {
+export const pSama = a => {
   return a.sort().filter((item, pos, ary) => {
     return item === ary[pos - 1];
   });
 };
 
-const totalinSama = a => {
+export const totalinSama = a => {
   return _(a)
     .groupBy('penyakit')
     .map((v, k) => ({
@@ -23,7 +23,7 @@ const totalinSama = a => {
     .value();
 };
 
-const palingTinggi = a => {
+export const palingTinggi = a => {
   return a.reduce((p, c) => {
     if (p.belief / p.penyakit.length > c.belief / c.penyakit.length) {
       return p;
@@ -33,5 +33,5 @@ const palingTinggi = a => {
 };
 
 // console.log(Math.max(0.7, 0.045));
-
-module.exports = { pSama, pBeda, totalinSama, palingTinggi };
+// export default {}
+// module.exports = { pSama, pBeda, totalinSama, palingTinggi };

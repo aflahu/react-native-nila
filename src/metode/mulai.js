@@ -1,4 +1,6 @@
-const { pSama, totalinSama, palingTinggi } = require('./arrayUtil');
+// const { pSama, totalinSama, palingTinggi } = require('./arrayUtil');
+import { pSama, totalinSama, palingTinggi } from './arrayUtil';
+// const  = arrayUtil;
 
 const gejala = [
   {
@@ -27,7 +29,8 @@ const kombinasi = async (ms, gk) => {
   }
   const mBaru = [];
   let bTotal = 0;
-  for (const [g] of mHasil.entries()) {
+
+  for (const [g] of Object.entries(mHasil)) {
     if (g < mHasil.length) {
       const data1 = await kali(mHasil[g], gk);
       await mBaru.push(...data1);
@@ -81,11 +84,14 @@ const kali = async (g1, g2) => {
 
 const mulai = async gej => {
   let temp;
-  for (const [i, v] of gej.entries()) {
+  const geja = Object.entries(gej);
+  // console.log(gej[1]);
+  for (const [is, v] of geja) {
+    const i = Number(is);
     if (i < gej.length - 1) {
       if (!temp) {
+        // console.log(gej[1 + i], i);
         const raw = await kombinasi(v, gej[i + 1]);
-        // console.log(raw);
         temp = await totalinSama(raw);
         // console.log(temp);
       } else {
@@ -97,7 +103,8 @@ const mulai = async gej => {
     }
   }
   // console.log(palingTinggi(temp));
-  return palingTinggi(temp);
+  const data = await palingTinggi(temp);
+  return { penyakit: data.penyakit, persen: data.belief };
 };
 
 // mulai(gejala).catch(e => console.log(e));

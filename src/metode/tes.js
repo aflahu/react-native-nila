@@ -14,4 +14,9 @@ const hasil = id.map((item, i) => {
   }
 });
 
-console.log(hasil);
+for (const [g, v] of Object.entries(data)) {
+  console.log(g);
+  console.log(v);
+}
+
+// console.log(hasil);
