@@ -15,38 +15,38 @@ import Info from '../menu/MenuDuniaIkan/Info';
 import InfoPenyakit from '../menu/MenuDuniaIkan/InfoPenyakit';
 import ModalLoading from '../menu/ModalLoading';
 
-const TabHasil = TabNavigator(
-  {
-    Hasil: {
-      screen: Hasil,
-      navigationOptions: {
-        tabBarLabel: 'Hasil'
-      }
-    },
-    Obat: {
-      screen: Obat,
-      navigationOptions: {
-        tabBarLabel: 'Obat'
-      }
-    },
-    Cegah: {
-      screen: Cegah,
-      navigationOptions: {
-        tabBarLabel: 'Pencegahan'
-      }
-    }
-  },
-  {
-    tabBarOptions: {
-      labelStyle: {
-        fontSize: 12
-      },
-      inactiveTintColor: '#212121',
-      activeTintColor: 'white',
-      indicatorStyle: { backgroundColor: 'white' }
-    }
-  }
-);
+// const TabHasil = TabNavigator(
+//   {
+//     Hasil: {
+//       screen: Hasil,
+//       navigationOptions: {
+//         tabBarLabel: 'Hasil'
+//       }
+//     },
+//     Obat: {
+//       screen: Obat,
+//       navigationOptions: {
+//         tabBarLabel: 'Obat'
+//       }
+//     },
+//     Cegah: {
+//       screen: Cegah,
+//       navigationOptions: {
+//         tabBarLabel: 'Pencegahan'
+//       }
+//     }
+//   },
+//   {
+//     tabBarOptions: {
+//       labelStyle: {
+//         fontSize: 12
+//       },
+//       inactiveTintColor: '#212121',
+//       activeTintColor: 'white',
+//       indicatorStyle: { backgroundColor: 'white' }
+//     }
+//   }
+// );
 
 const TabDuniakan = TabNavigator(
   {
@@ -113,7 +113,7 @@ const Router = StackNavigator(
       }
     },
     MenuHasil: {
-      screen: TabHasil,
+      screen: Hasil,
       path: '/Menuhasil/:diagnosa',
       navigationOptions: {
         title: 'Hasil Diagnosa',
@@ -148,15 +148,15 @@ const Router = StackNavigator(
   }
 );
 
-const Modal = StackNavigator(
-  {
-    Router: { screen: Router },
-    ModalLoading: { path: 'ModalLoading/:data', screen: ModalLoading }
-  },
-  {
-    mode: 'modal',
-    headerMode: 'none'
-  }
-);
+// const Modal = StackNavigator(
+//   {
+//     Router: { screen: Router },
+//     ModalLoading: { path: 'ModalLoading/:data', screen: ModalLoading }
+//   },
+//   {
+//     mode: 'modal',
+//     headerMode: 'none'
+//   }
+// );
 
-export default Modal;
+export default Router;

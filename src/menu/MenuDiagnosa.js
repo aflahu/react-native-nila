@@ -26,7 +26,7 @@ class MenuDiagnosa extends Component {
 
   onSubmit = () => {
     const data = this.state.data.filter(item => item.check === true);
-    this.props.navigation.navigate('ModalLoading', { data });
+    this.props.navigation.navigate('MenuHasil', { data });
     this.onReset();
   };
   onPress = gejala => {
