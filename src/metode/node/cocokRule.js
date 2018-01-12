@@ -3,7 +3,7 @@ const data = require('../../konfig/rules');
 
 const pilihan = [1, 10];
 
-const cocokRule = async (plihan, rules) => {
+const cocokRule = (plihan, rules) => {
   const hasil = [];
   for (const v of rules) {
     if (v[0] === pilihan[0]) {

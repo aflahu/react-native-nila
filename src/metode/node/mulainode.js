@@ -1,8 +1,10 @@
 const { pSama, totalinSama, totalinTidakSama, palingTinggi } = require('./arrayUtilnode');
+const cocokRule = require('./cocokRule');
 // import { pSama, totalinSama, palingTinggi } from './arrayUtil';
 // const  = arrayUtil;
 
 const dbelief = require('../../konfig/belief');
+const rules = require('../../konfig/rules');
 
 const gejalaBelief = [dbelief[3], dbelief[4], dbelief[31]];
 
@@ -114,7 +116,7 @@ const mulai = async gej => {
         // const tidakSama = await totalinTidakSama(raw);
         // console.log(raw);
         temp = await totalinSama(raw);
-        console.log(temp);
+        // console.log(temp);
         const pembagi = await temp.filter(g => g.penyakit[0] === 100);
         if (pembagi.length > 0) {
           const hapus = await temp.filter(g => g.penyakit[0] !== 100);
@@ -135,7 +137,10 @@ mulai(gejalaBelief)
   .then(res => console.log(res))
   .catch(e => console.log(e));
 
-const idPilih = [1, 18, 13];
+const pilihan = [1, 18, 13];
+
+const idPilih = cocokRule(pilihan, rules);
+console.log(idPilih);
 // const idPilih = [4, 5, 32];
 // console.log(belief);
 const hasil = dbelief.filter((item, i) => {
