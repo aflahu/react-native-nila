@@ -77,7 +77,7 @@ const TabDuniakan = TabNavigator(
       labelStyle: {
         fontSize: 12
       },
-      inactiveTintColor: '#212121',
+      inactiveTintColor: '#1565C0',
       activeTintColor: 'white',
       indicatorStyle: { backgroundColor: 'white' }
     }
