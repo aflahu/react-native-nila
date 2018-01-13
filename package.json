@@ -1,6 +1,6 @@
 {
   "name": "nila",
-  "version": "0.1.0",
+  "version": "0.1.0-rc0",
   "private": true,
   "devDependencies": {
     "jest-expo": "23.0.0",
