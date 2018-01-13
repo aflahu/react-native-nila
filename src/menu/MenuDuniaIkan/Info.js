@@ -8,6 +8,7 @@ class Info extends Component {
   // onCompile = () => {
   //   return ;
   // };
+
   render() {
     return (
       <View>
