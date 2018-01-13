@@ -30,7 +30,8 @@ const kombinasi = async (ms, gk) => {
   const mBaru = [];
   let bTotal = 0;
 
-  for (const [g] of Object.entries(mHasil)) {
+  for (const [gs] of Object.entries(mHasil)) {
+    const g = Number(gs);
     if (g < mHasil.length) {
       const data1 = await kali(mHasil[g], gk);
       await mBaru.push(...data1);
@@ -48,7 +49,7 @@ const kombinasi = async (ms, gk) => {
 
   mHasil = await mBaru.filter(g => g.penyakit !== 0);
   mBaru.length = 0;
-
+  // debugger;
   return await mHasil;
 };
 
@@ -70,6 +71,7 @@ const kali = async (g1, g2) => {
   }
   const penyakit = 0;
   const belief = g1.belief * g2.belief;
+  // debugger;
   return await [
     {
       penyakit: g2.penyakit,
@@ -83,9 +85,10 @@ const kali = async (g1, g2) => {
 };
 
 const mulai = async gej => {
+  debugger;
   let temp;
   const geja = Object.entries(gej);
-  // console.log(gej[1]);
+  console.log(gej[1]);
   for (const [is, v] of geja) {
     const i = Number(is);
     if (i < gej.length - 1) {
@@ -104,6 +107,7 @@ const mulai = async gej => {
   }
   // console.log(palingTinggi(temp));
   const data = await palingTinggi(temp);
+  // console.log(data);
   return { penyakit: data.penyakit, persen: data.belief };
 };
 

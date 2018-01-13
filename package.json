@@ -14,7 +14,8 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
-    "push": "git add . & git commit & git push origin master"
+    "push": "git add . & git commit & git push origin master",
+    "node": "nodemon --exec node src/metode/node/mulainode.js"
   },
   "jest": {
     "preset": "jest-expo"
@@ -28,6 +29,7 @@
     "react-native-elements": "^0.18.5",
     "react-native-indicator": "^0.7.0",
     "react-native-markdown": "^0.1.1",
+    "react-native-progress-circle": "^2.0.0",
     "react-native-spinkit": "^1.1.1",
     "react-native-table-component": "^1.1.2",
     "react-native-typography": "^1.1.0",
