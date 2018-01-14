@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Alert } from 'react-native';
 import { Card } from 'react-native-elements';
 import { TextLoader, RippleLoader } from 'react-native-indicator';
 import ProgressCircle from 'react-native-progress-circle';
+import axios from 'axios';
 // import mulai from '../../metode/mulai';
 const penyakitInfo = require('../../konfig/penyakit');
 
@@ -12,28 +13,33 @@ const namaPenyakit = require('../../konfig/namaPenyakit').data;
 class Hasil extends Component {
   state = {
     loading: true,
-    diagnosa: {}
+    diagnosa: {},
+    error: false
   };
-  componentDidMount() {
+  async componentDidMount() {
     // this.setState({ data: this.props.navigation.state.params.data });
     // console.log(this.props.navigation.state.params.data);
-    this.onTunggu();
+    await this.onTunggu();
   }
   onTunggu = async () => {
     try {
-      // const { data } = this.props.navigation.state.params;
-      // const idPilih = data.map(item => item.key);
+      const { data } = this.props.navigation.state.params;
+      const idPilih = data.map(item => item.key);
       // const hasil = belief.filter((item, i) => {
       //   if (idPilih.includes(item.key)) {
       //     return belief[i];
       //   }
       // });
+      const diagnosa = await axios.post('https://agile-gorge-87388.herokuapp.com/', {
+        gejala: idPilih
+      });
+      console.log(diagnosa.data.hasil);
       this.setState({
         loading: false,
-        diagnosa: { penyakit: [1], persen: 0.8 }
+        diagnosa: diagnosa.data.hasil
       });
     } catch (error) {
-      this.setState({ loading: false });
+      this.setState({ loading: false, error: true });
       console.log(error);
     }
   };
@@ -47,8 +53,9 @@ class Hasil extends Component {
         </View>
       );
     }
+
     const { penyakit, persen } = this.state.diagnosa;
-    console.log({ penyakit, persen });
+    // console.log({ penyakit, persen });
     return (
       <ScrollView style={{ flex: 1 }}>
         <Card title="Hasil">
