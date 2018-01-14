@@ -9,6 +9,7 @@ class Info extends Component {
     if (this.props.navigation.state.params.gambar) {
       return (
         <Image
+          resizeMode="stretch"
           style={{ height: 300, width: '100%', marginBottom: 10 }}
           source={this.props.navigation.state.params.gambar}
         />

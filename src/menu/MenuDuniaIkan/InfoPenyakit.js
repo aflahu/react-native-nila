@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { ScrollView, Text, FlatList, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 import { material } from 'react-native-typography';
+
+const gambarPenyakit = require('../../konfig/GambarPenyakit');
 
 class InfoPenyakit extends Component {
   render() {
     return (
-      <View>
+      <ScrollView>
+        <Card>
+          <Image
+            resizeMode="stretch"
+            style={{ width: '100%', height: 300 }}
+            source={gambarPenyakit.gambar[this.props.navigation.state.params.index]}
+          />
+        </Card>
         <FlatList
           data={this.props.navigation.state.params.isi}
           renderItem={({ item }) => (
@@ -17,7 +26,7 @@ class InfoPenyakit extends Component {
             </Card>
           )}
         />
-      </View>
+      </ScrollView>
     );
   }
 }

@@ -36,7 +36,8 @@ class Penyakit extends Component {
                 onPress={() =>
                   this.props.navigation.navigate('InfoPenyakit', {
                     judul: item.key,
-                    isi: penyakitData.data[index].data
+                    isi: penyakitData.data[index].data,
+                    index
                   })
                 }
                 teks={item.key}
