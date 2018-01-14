@@ -8,7 +8,7 @@ const gambarPenyakit = require('../../konfig/GambarPenyakit');
 class InfoPenyakit extends Component {
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={{ flex: 1 }}>
         <Card>
           <Image
             resizeMode="stretch"
