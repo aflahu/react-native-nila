@@ -21,7 +21,8 @@ class JenisJenis extends Component {
                 onPress={() =>
                   this.props.navigation.navigate('Info', {
                     judul: item.key,
-                    isi: item.isi
+                    isi: item.isi,
+                    gambar: item.gambar
                   })
                 }
                 teks={item.key}
