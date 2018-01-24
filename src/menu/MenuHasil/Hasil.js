@@ -33,14 +33,23 @@ class Hasil extends Component {
       const diagnosa = await axios.post('https://agile-gorge-87388.herokuapp.com/', {
         gejala: idPilih
       });
-      console.log(diagnosa.data.hasil);
+      if (diagnosa.status === 400) {
+        throw 'oops';
+      }
+      // console.log(diagnosa.status);
       this.setState({
         loading: false,
         diagnosa: diagnosa.data.hasil
       });
     } catch (error) {
-      this.setState({ loading: false, error: true });
-      console.log(error);
+      Alert.alert(
+        'Oops',
+        'Silahkan coba kembali',
+        [{ text: 'OK', onPress: () => this.props.navigation.navigate('MenuDiagnosa') }],
+        { cancelable: false }
+      );
+      // this.setState({ loading: false, error: true });
+      // console.log(error);
     }
   };
 
@@ -73,7 +82,7 @@ class Hasil extends Component {
             >
               <Text>{(persen * 100).toFixed()}%</Text>
             </ProgressCircle>
-            <Text>{namaPenyakit[penyakit[0]]}</Text>
+            <Text>{namaPenyakit[penyakit[0] - 1]}</Text>
           </View>
         </Card>
         <Card title="Pengobatan">

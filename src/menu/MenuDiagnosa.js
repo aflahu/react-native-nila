@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, FlatList, View } from 'react-native';
+import { Text, ScrollView, FlatList, View, Alert } from 'react-native';
 import { Card, Icon, Button } from 'react-native-elements';
 // import Tombol from '../komponen/element/Tombol';
 import CheckList from '../komponen/CheckList';
@@ -25,9 +25,25 @@ class MenuDiagnosa extends Component {
   }
 
   onSubmit = () => {
-    const data = this.state.data.filter(item => item.check === true);
-    this.props.navigation.navigate('MenuHasil', { data });
-    this.onReset();
+    const pilihan = this.state.data;
+    const data = pilihan.filter(item => item.check === true);
+    // console.log(data[0].key);
+    if (
+      (data[0].key === 1 && data.length > 1) ||
+      (data[0].key === 8 && data.length > 1) ||
+      (data[0].key !== 1 && data[0].key !== 8 && data.length > 2)
+    ) {
+      this.props.navigation.navigate('MenuHasil', { data });
+      this.onReset();
+    } else {
+      Alert.alert(
+        'Perhatian',
+        'Pilihan gejala tidak mencapai syarat minimum, silahkan tambahkan',
+        [{ text: 'OK', onPress: () => console.log('OK Pressed') }],
+        { cancelable: false }
+      );
+    }
+    // return alert
   };
   onPress = gejala => {
     const dGejala = this.state.data;
