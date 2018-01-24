@@ -71,6 +71,55 @@ export const data = [
       }
     ]
   },
+
+  {
+    data: [
+      {
+        key: 'Karakteristik',
+        isi:
+          'Saprolegniasis disebabkan oleh jamur saprolegnia sp. Jamur ini menyerang organ luar ikan, seperti bagian kepala, tutup insang, sirip, dan bagian luar lainnya.'
+      },
+      {
+        key: 'Gejala',
+        isi:
+          '1)	Ikan mengosok-gosokkan badannya pada benda keras<br/>2)	benang benang halus menyerupai kapas yang menempel pada kulit, sirip, kepala, dan tutup insang ikan'
+      },
+      {
+        key: 'Pengobatan',
+        isi:
+          'Rendam ikan Nila yang terserang dalam larutan garam 500-1.000 mg/liter air selama 24 jam atau dalam larutan Formalin 25 mg/liter selama 24 jam'
+      },
+      {
+        key: 'Pencegahan',
+        isi: 'Frekuensi pergantian air lebih sering dengan suhu air 28°C'
+      }
+    ]
+  },
+
+  {
+    data: [
+      {
+        key: 'Karakteristik',
+        isi:
+          'Penyebab penyakit bintik putih adalah Protozoa incthyrius multifilis. Faktor penyebab penyakit ini adalah kualitas air yang buruk, suhu yang terlalu rendah, pakan yang buruk, dan kontaminasi ikan lain yang sudah terkena penyakit bintik putih.'
+      },
+      {
+        key: 'Gejala',
+        isi:
+          '1)	Nafsu makan menurun,ikan tidak seperti biasanya dan ikan tidak mau makan<br/>2)	Ikan sulit bernafas, sering megap-megap dan muncul ke permukaan<br/>3)	Ikan mengosok-gosokkan badannya pada benda keras<br/>4)	Ikan lemah dan berenang lambat<br/>5)	Warna tubuh ikan keputihan dan pucat<br/>6)	Eksopthalmia atau mata menonjol<br/>7)	Muncul bintik putih pada kulit, ekor, dan sirip'
+      },
+      {
+        key: 'Pengobatan',
+        isi:
+          'Ikan direndam dalam larutan garam  1-3 g/100 cc air selama 5-10 menit atau Methylene Blue (MB 1 %) sebanyak 1 gr dilarutkan degan 100 cc air. Ambil 2-4 cc larutan tersebut dan encerkan kembali di dalam 4 liter air. Ikan yg sakit selanjutnya direndam  di dalam larutan selama 24 jam dilakukan 3-5 kali dengan selang waktu sehari'
+      },
+      {
+        key: 'Pencegahan',
+        isi:
+          '1)	Menggunakan alat yang bersih dan steril<br/>2)	mempertahankan kualitas air tetap baik, dan mempertahankan suhu air agak tidak kurang 28°C<br/>3)	Berikan Immunostimulan, seperti vitamin C, untuk meningkatkan ketahan tubuh ikan Nila'
+      }
+    ]
+  },
   {
     data: [
       {
@@ -100,29 +149,6 @@ export const data = [
       {
         key: 'Karakteristik',
         isi:
-          'Saprolegniasis disebabkan oleh jamur saprolegnia sp. Jamur ini menyerang organ luar ikan, seperti bagian kepala, tutup insang, sirip, dan bagian luar lainnya.'
-      },
-      {
-        key: 'Gejala',
-        isi:
-          '1)	Ikan mengosok-gosokkan badannya pada benda keras<br/>2)	benang benang halus menyerupai kapas yang menempel pada kulit, sirip, kepala, dan tutup insang ikan'
-      },
-      {
-        key: 'Pengobatan',
-        isi:
-          'Rendam ikan Nila yang terserang dalam larutan garam 500-1.000 mg/liter air selama 24 jam atau dalam larutan Formalin 25 mg/liter selama 24 jam'
-      },
-      {
-        key: 'Pencegahan',
-        isi: 'Frekuensi pergantian air lebih sering dengan suhu air 28°C'
-      }
-    ]
-  },
-  {
-    data: [
-      {
-        key: 'Karakteristik',
-        isi:
           'Epistylis spp. Merupakan parasit dari filum Ciliophora yang menyerang ikan pada stadiah benih'
       },
       {
@@ -137,30 +163,6 @@ export const data = [
       {
         key: 'Pencegahan',
         isi: '1)	Pemberian vit.C dan antibiotik pada pakan<br/>2)	Jaga kualitas air'
-      }
-    ]
-  },
-  {
-    data: [
-      {
-        key: 'Karakteristik',
-        isi:
-          'Penyebab penyakit bintik putih adalah Protozoa incthyrius multifilis. Faktor penyebab penyakit ini adalah kualitas air yang buruk, suhu yang terlalu rendah, pakan yang buruk, dan kontaminasi ikan lain yang sudah terkena penyakit bintik putih.'
-      },
-      {
-        key: 'Gejala',
-        isi:
-          '1)	Nafsu makan menurun,ikan tidak seperti biasanya dan ikan tidak mau makan<br/>2)	Ikan sulit bernafas, sering megap-megap dan muncul ke permukaan<br/>3)	Ikan mengosok-gosokkan badannya pada benda keras<br/>4)	Ikan lemah dan berenang lambat<br/>5)	Warna tubuh ikan keputihan dan pucat<br/>6)	Eksopthalmia atau mata menonjol<br/>7)	Muncul bintik putih pada kulit, ekor, dan sirip'
-      },
-      {
-        key: 'Pengobatan',
-        isi:
-          'Ikan direndam dalam larutan garam  1-3 g/100 cc air selama 5-10 menit atau Methylene Blue (MB 1 %) sebanyak 1 gr dilarutkan degan 100 cc air. Ambil 2-4 cc larutan tersebut dan encerkan kembali di dalam 4 liter air. Ikan yg sakit selanjutnya direndam  di dalam larutan selama 24 jam dilakukan 3-5 kali dengan selang waktu sehari'
-      },
-      {
-        key: 'Pencegahan',
-        isi:
-          '1)	Menggunakan alat yang bersih dan steril<br/>2)	mempertahankan kualitas air tetap baik, dan mempertahankan suhu air agak tidak kurang 28°C<br/>3)	Berikan Immunostimulan, seperti vitamin C, untuk meningkatkan ketahan tubuh ikan Nila'
       }
     ]
   },
