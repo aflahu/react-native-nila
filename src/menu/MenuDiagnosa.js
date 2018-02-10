@@ -31,7 +31,8 @@ class MenuDiagnosa extends Component {
     if (
       (data[0].key === 1 && data.length > 1) ||
       (data[0].key === 8 && data.length > 1) ||
-      (data[0].key !== 1 && data[0].key !== 8 && data.length > 2)
+      (data[0].key === 3 && data.length > 5) ||
+      (data[0].key !== 1 && data[0].key !== 8 && data[0].key !== 3 && data.length > 2)
     ) {
       this.props.navigation.navigate('MenuHasil', { data });
       this.onReset();
