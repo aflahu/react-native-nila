@@ -87,12 +87,12 @@ class Hasil extends Component {
         </Card>
         <Card title="Pengobatan">
           <Text>
-            {penyakitInfo.data[penyakit[0]].data[2].isi.replace(new RegExp('<br/>', 'g'), '\n\n')}
+            {penyakitInfo.data[penyakit[0] - 1].data[2].isi.replace(new RegExp('<br/>', 'g'), '\n\n')}
           </Text>
         </Card>
         <Card title="Pencegahan">
           <Text>
-            {penyakitInfo.data[penyakit[0]].data[3].isi.replace(new RegExp('<br/>', 'g'), '\n\n')}
+            {penyakitInfo.data[penyakit[0] - 1].data[3].isi.replace(new RegExp('<br/>', 'g'), '\n\n')}
           </Text>
         </Card>
       </ScrollView>
