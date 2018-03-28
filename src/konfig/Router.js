@@ -113,7 +113,7 @@ const Router = StackNavigator(
       screen: Hasil,
       path: '/Menuhasil/:diagnosa',
       navigationOptions: {
-        title: 'Hasil Diagnosa',
+        title: 'Hasil',
         headerStyle: { backgroundColor: '#3F51B5' },
         headerTintColor: 'white'
       }

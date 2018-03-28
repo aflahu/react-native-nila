@@ -7,9 +7,9 @@ class CheckList extends Component {
     const { teks, checked, gambar, onPress } = this.props;
     // const gambar = require(this.state.gambar);
     return (
-      <View style={{ flexDirection: 'row' }}>
-        <Image style={{ width: 66, height: 58, alignSelf: 'center' }} source={gambar} />
-        <CheckBox containerStyle={{ flex: 1, backgroundColor: 'white' }} checkedColor='#3F51B5' title={teks} checked={checked} onPress={onPress} />
+      <View style={{ flexDirection: 'row', marginBottom: 10 }}>
+        <Image style={{ width: 86, height: 78, alignSelf: 'center', marginRight: 5 }} source={gambar} />
+        <CheckBox containerStyle={{ flex: 1, backgroundColor: 'white' }} checkedColor='#009688' title={teks} checked={checked} onPress={onPress} />
       </View>
     );
   }

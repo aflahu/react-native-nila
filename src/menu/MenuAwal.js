@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <View style={styles.root}>
         <Image style={{ width: 100, height: 110 }} source={require('../Gambar/uin.jpg')} />
-        <Text style={styles.title}>Sistem Pakar Diagnosa Ikan</Text>
+        <Text style={styles.title}>Sistem Pakar Diagnosa Ikan Nila</Text>
         <Card containerStyle={styles.card} title="Pilihan Menu">
           <Tombol
             gaya={styles.button}

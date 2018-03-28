@@ -8,7 +8,7 @@ class ListInfo extends Component {
     return (
       <View style={{ flexDirection: 'row', marginBottom: 10 }}>
         <Image
-          style={{ width: 66, height: 58, alignSelf: 'center', marginRight: 5 }}
+          style={{ width: 86, height: 78, alignSelf: 'center', marginRight: 5 }}
           source={gambar}
         />
         <ListItem containerStyle={{ flex: 1 }} onPress={onPress} title={teks} />

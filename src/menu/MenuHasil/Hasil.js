@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, Alert } from 'react-native';
-import { Card } from 'react-native-elements';
+import { Card, ButtonGroup, Button, Icon } from 'react-native-elements';
 import { TextLoader, RippleLoader } from 'react-native-indicator';
 import ProgressCircle from 'react-native-progress-circle';
 import axios from 'axios';
+import NavigasiHasil from '../../komponen/NavigasiHasil';
 // import mulai from '../../metode/mulai';
 const penyakitInfo = require('../../konfig/penyakit');
 
@@ -11,6 +12,23 @@ const penyakitInfo = require('../../konfig/penyakit');
 const namaPenyakit = require('../../konfig/namaPenyakit').data;
 
 class Hasil extends Component {
+  static navigationOptions = ({ navigation }) => {
+    const headerRight = (
+      <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+        {/* <Button
+          buttonStyle={{ borderRadius: 10, height: 35 }}
+          backgroundColor="#009688"
+          title="Menu Awal"
+        />
+        <Button
+          buttonStyle={{ borderRadius: 10, height: 35 }}
+          backgroundColor="#009688"
+          title="Diagnosa Ulang"
+        /> */}
+      </View>
+    );
+    return { headerRight, headerLeft: null };
+  };
   state = {
     loading: true,
     diagnosa: {},
@@ -53,49 +71,68 @@ class Hasil extends Component {
     }
   };
 
+  onDiagnosaUlang = () => this.props.navigation.goBack();
+  onMenuAwal = () => {
+    this.props.navigation.navigate('MenuAwal');
+  };
+
   render() {
     if (this.state.loading) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <RippleLoader size={70} />
+          <RippleLoader size={70} color="#3F51B5" />
           <TextLoader text="Loading" />
         </View>
       );
     }
 
     const { penyakit, persen } = this.state.diagnosa;
+    const buttons = ['Menu Utama', 'Diagnosa Ulang'];
     // console.log({ penyakit, persen });
     return (
-      <ScrollView style={{ flex: 1 }}>
-        <Card title="Hasil">
-          <Text style={{ marginBottom: 10 }}>
-            Berdasarkan dari gejala-gejala yang dialami, ikan Nila anda terserang penyakit:
-          </Text>
-          <View style={{ alignItems: 'center' }}>
-            <ProgressCircle
-              percent={Number((persen * 100).toFixed())}
-              radius={50}
-              borderWidth={8}
-              color="#3F51B5"
-              shadowColor="#999"
-              bgColor="#fff"
-            >
-              <Text>{(persen * 100).toFixed()}%</Text>
-            </ProgressCircle>
-            <Text>{namaPenyakit[penyakit[0] - 1]}</Text>
-          </View>
-        </Card>
-        <Card title="Pengobatan">
-          <Text>
-            {penyakitInfo.data[penyakit[0] - 1].data[2].isi.replace(new RegExp('<br/>', 'g'), '\n\n')}
-          </Text>
-        </Card>
-        <Card title="Pencegahan">
-          <Text>
-            {penyakitInfo.data[penyakit[0] - 1].data[3].isi.replace(new RegExp('<br/>', 'g'), '\n\n')}
-          </Text>
-        </Card>
-      </ScrollView>
+      <View style={{ flex: 1 }}>
+        <ScrollView style={{ flex: 1 }}>
+          {/* <ButtonGroup onPress={this.updateIndex}
+          buttons={buttons}
+        /> */}
+          <Card title="Hasil">
+            <Text style={{ marginBottom: 10 }}>
+              Berdasarkan dari gejala-gejala yang dialami, ikan Nila anda terserang penyakit:
+            </Text>
+            <View style={{ alignItems: 'center' }}>
+              <ProgressCircle
+                percent={Number((persen * 100).toFixed())}
+                radius={50}
+                borderWidth={8}
+                color="#3F51B5"
+                shadowColor="#999"
+                bgColor="#fff"
+              >
+                <Text>{(persen * 100).toFixed()}%</Text>
+              </ProgressCircle>
+              <Text>{namaPenyakit[penyakit[0] - 1]}</Text>
+            </View>
+          </Card>
+          <Card title="Pengobatan">
+            <Text>
+              {penyakitInfo.data[penyakit[0] - 1].data[2].isi.replace(
+                new RegExp('<br/>', 'g'),
+                '\n\n'
+              )}
+            </Text>
+          </Card>
+          <Card title="Pencegahan">
+            <Text>
+              {penyakitInfo.data[penyakit[0] - 1].data[3].isi.replace(
+                new RegExp('<br/>', 'g'),
+                '\n\n'
+              )}
+            </Text>
+          </Card>
+          <View style={{ marginBottom: 70 }} />
+        </ScrollView>
+        <NavigasiHasil onDiagnosaUlang={this.onDiagnosaUlang} onMenuAwal={this.onMenuAwal} />
+      </View>
     );
   }
 }

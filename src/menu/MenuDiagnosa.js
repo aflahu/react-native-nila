@@ -10,7 +10,14 @@ class MenuDiagnosa extends Component {
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state;
     const headerRight = (
-      <Button backgroundColor="transparent" title="submit" onPress={params.onSubmit} />
+      <View>
+        <Button
+          buttonStyle={{ borderRadius: 10, height: 35 }}
+          backgroundColor="#009688"
+          title="Diagnosa"
+          onPress={params.onSubmit}
+        />
+      </View>
     );
     return { headerRight };
   };
@@ -74,7 +81,7 @@ class MenuDiagnosa extends Component {
     return (
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.info}>
-          <Icon name="info" style={styles.icon} />
+          <Icon name="info" style={styles.icon} color="#009688" />
           <Text>Pilih Gejala yang diderita ikan nila</Text>
         </View>
         <Card wrapperStyle={styles.check}>
@@ -105,7 +112,8 @@ const styles = {
     marginTop: 15
   },
   icon: {
-    paddingRight: '20px'
+    paddingRight: '20px',
+    backgroundColor: '#009688'
     // justify: 'center'
   },
   check: {
