@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "Nila",
+    "name": "SPDIN",
     "version": "1.0.0",
     "sdkVersion": "23.0.0",
     "android": {
       "package": "com.yogierka.nila"
-    }
+    },
+    "icon": "./src/Gambar/icon.png"
   }
 }
