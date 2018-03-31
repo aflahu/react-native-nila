@@ -12,39 +12,6 @@ import Hasil from '../menu/MenuHasil/Hasil';
 import Info from '../menu/MenuDuniaIkan/Info';
 import InfoPenyakit from '../menu/MenuDuniaIkan/InfoPenyakit';
 
-// const TabHasil = TabNavigator(
-//   {
-//     Hasil: {
-//       screen: Hasil,
-//       navigationOptions: {
-//         tabBarLabel: 'Hasil'
-//       }
-//     },
-//     Obat: {
-//       screen: Obat,
-//       navigationOptions: {
-//         tabBarLabel: 'Obat'
-//       }
-//     },
-//     Cegah: {
-//       screen: Cegah,
-//       navigationOptions: {
-//         tabBarLabel: 'Pencegahan'
-//       }
-//     }
-//   },
-//   {
-//     tabBarOptions: {
-//       labelStyle: {
-//         fontSize: 12
-//       },
-//       inactiveTintColor: '#212121',
-//       activeTintColor: 'white',
-//       indicatorStyle: { backgroundColor: 'white' }
-//     }
-//   }
-// );
-
 const TabDuniakan = TabNavigator(
   {
     Klasifikasi: {
@@ -140,20 +107,8 @@ const Router = StackNavigator(
   {
     cardStyle: {
       marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
-      // backgroundColor: '#3F51B5'
     }
   }
 );
-
-// const Modal = StackNavigator(
-//   {
-//     Router: { screen: Router },
-//     ModalLoading: { path: 'ModalLoading/:data', screen: ModalLoading }
-//   },
-//   {
-//     mode: 'modal',
-//     headerMode: 'none'
-//   }
-// );
 
 export default Router;

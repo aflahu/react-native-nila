@@ -14,20 +14,6 @@ class Penyakit extends Component {
     return (
       <ScrollView style={{ flex: 1 }}>
         <Card title="penyakit-penyakit Ikan Nila">
-          {/* <FlatList
-            data={this.onAddKey(namaPenyakit)}
-            renderItem={({ item, index }) => (
-              <ListItem
-                onPress={() =>
-                  this.props.navigation.navigate('InfoPenyakit', {
-                    judul: item.key,
-                    isi: penyakitData.data[index].data
-                  })
-                }
-                title={item.key}
-              />
-            )}
-          /> */}
           <FlatList
             data={this.onAddKey(namaPenyakit)}
             underlayColor="blue"

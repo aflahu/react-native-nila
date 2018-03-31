@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Alert } from 'react-native';
+import { Text, View, ScrollView, Alert, Image } from 'react-native';
 import { Card, ButtonGroup, Button, Icon } from 'react-native-elements';
 import { TextLoader, RippleLoader } from 'react-native-indicator';
 import ProgressCircle from 'react-native-progress-circle';
@@ -10,24 +10,11 @@ const penyakitInfo = require('../../konfig/penyakit');
 
 // const belief = require('../../konfig/belief');
 const namaPenyakit = require('../../konfig/namaPenyakit').data;
+const gambarPenyakit = require('../../konfig/GambarPenyakit');
 
 class Hasil extends Component {
-  static navigationOptions = ({ navigation }) => {
-    const headerRight = (
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-        {/* <Button
-          buttonStyle={{ borderRadius: 10, height: 35 }}
-          backgroundColor="#009688"
-          title="Menu Awal"
-        />
-        <Button
-          buttonStyle={{ borderRadius: 10, height: 35 }}
-          backgroundColor="#009688"
-          title="Diagnosa Ulang"
-        /> */}
-      </View>
-    );
-    return { headerRight, headerLeft: null };
+  static navigationOptions = () => {
+    return { headerLeft: null };
   };
   state = {
     loading: true,
@@ -35,26 +22,18 @@ class Hasil extends Component {
     error: false
   };
   async componentDidMount() {
-    // this.setState({ data: this.props.navigation.state.params.data });
-    // console.log(this.props.navigation.state.params.data);
     await this.onTunggu();
   }
   onTunggu = async () => {
     try {
       const { data } = this.props.navigation.state.params;
       const idPilih = data.map(item => item.key);
-      // const hasil = belief.filter((item, i) => {
-      //   if (idPilih.includes(item.key)) {
-      //     return belief[i];
-      //   }
-      // });
       const diagnosa = await axios.post('https://agile-gorge-87388.herokuapp.com/', {
         gejala: idPilih
       });
       if (diagnosa.status === 400) {
         throw 'oops';
       }
-      // console.log(diagnosa.status);
       this.setState({
         loading: false,
         diagnosa: diagnosa.data.hasil
@@ -66,8 +45,6 @@ class Hasil extends Component {
         [{ text: 'OK', onPress: () => this.props.navigation.navigate('MenuDiagnosa') }],
         { cancelable: false }
       );
-      // this.setState({ loading: false, error: true });
-      // console.log(error);
     }
   };
 
@@ -88,13 +65,9 @@ class Hasil extends Component {
 
     const { penyakit, persen } = this.state.diagnosa;
     const buttons = ['Menu Utama', 'Diagnosa Ulang'];
-    // console.log({ penyakit, persen });
     return (
       <View style={{ flex: 1 }}>
         <ScrollView style={{ flex: 1 }}>
-          {/* <ButtonGroup onPress={this.updateIndex}
-          buttons={buttons}
-        /> */}
           <Card title="Hasil">
             <Text style={{ marginBottom: 10 }}>
               Berdasarkan dari gejala-gejala yang dialami, ikan Nila anda terserang penyakit:
@@ -112,6 +85,12 @@ class Hasil extends Component {
               </ProgressCircle>
               <Text>{namaPenyakit[penyakit[0] - 1]}</Text>
             </View>
+          </Card>
+          <Card>
+            <Image
+              style={{ width: 150, height: 150, alignSelf: 'center' }}
+              source={gambarPenyakit.gambar[penyakit[0] - 1]}
+            />
           </Card>
           <Card title="Pengobatan">
             <Text>

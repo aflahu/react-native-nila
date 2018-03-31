@@ -218,7 +218,7 @@ export const data = [
   },
   {
     key: 33,
-    teks: 'Ada bisul di atas kepala ikan',
+    teks: 'lendir berkurang',
     gambar: require('../Gambar/gejala-compressed/G33.jpg'),
     check: false
   },

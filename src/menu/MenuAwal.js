@@ -57,7 +57,6 @@ const styles = {
   },
   card: {
     width: '80%',
-    // backgroundColor: '#EAF3FB',
     borderRadius: 10
   },
   title: {

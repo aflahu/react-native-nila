@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, FlatList, View, Alert } from 'react-native';
 import { Card, Icon, Button } from 'react-native-elements';
-// import Tombol from '../komponen/element/Tombol';
 import CheckList from '../komponen/CheckList';
 
 const BaseData = require('../konfig/gejala.js').data;
@@ -26,15 +25,12 @@ class MenuDiagnosa extends Component {
   };
 
   componentDidMount() {
-    // We can only set the function after the component has been initialized
     this.props.navigation.setParams({ onSubmit: this.onSubmit });
-    // this.onReset();
   }
 
   onSubmit = () => {
     const pilihan = this.state.data;
     const data = pilihan.filter(item => item.check === true);
-    // console.log(data[0].key);
     if (
       (data[0].key === 1 && data.length > 1) ||
       (data[0].key === 8 && data.length > 1) ||
@@ -114,11 +110,8 @@ const styles = {
   icon: {
     paddingRight: '20px',
     backgroundColor: '#009688'
-    // justify: 'center'
   },
   check: {
-    // height: '100%',
-    // flex: 1
     position: 'relative'
   },
   kontrol: {

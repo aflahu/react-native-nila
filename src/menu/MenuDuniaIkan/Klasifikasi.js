@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Image } from 'react-native';
+import { Text, ScrollView, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 import { Table, TableWrapper, Rows, Col } from 'react-native-table-component';
 import { material } from 'react-native-typography';
@@ -7,7 +7,6 @@ const morfology = require('../../Gambar/morfology.png');
 
 class Klasifikasi extends Component {
   render() {
-    // const tableHead = ['Head', 'Head2', 'Head3', 'Head4'];
     const tableTitle = [
       'Filum',
       'Subfilum',
@@ -45,12 +44,6 @@ class Klasifikasi extends Component {
             {'\n'}
           </Text>
           <Table>
-            {/* <Row
-              data={tableHead}
-              flexArr={[1, 2, 1, 1]}
-              style={styles.head}
-              textStyle={styles.text}
-            /> */}
             <TableWrapper style={{ flexDirection: 'row' }}>
               <Col
                 data={tableTitle}
@@ -64,7 +57,26 @@ class Klasifikasi extends Component {
         </Card>
         <Card title="Morfology">
           <Image source={morfology} />
-          <Text style={material.body1}>
+          <Text style={[...material.body1, styles.tallText]}>
+            {'\n'}
+            Keterangan Bagian ikan Nila:
+            {'\n'}
+            a. celah mulut (rima oris)
+            {'\n'}
+            b. mata (organon visus)
+            {'\n'}
+            c. tutup insang (apparatus opercularis)
+            {'\n'}
+            d. sirip punggung (pinna dorsalis)
+            {'\n'}
+            e. sirip dada (pinna pectoralis)
+            {'\n'}
+            f. sirip perut (pinna abdominales)
+            {'\n'}
+            g. sirip anus (pinna analis)
+            {'\n'}
+            h. sirip ekor (pinna caudalis)
+            {'\n'}
             {'\n'}
             Secara umum, bentuk tubuh ikan Nila memanjang dan ramping, dengan sisik berukuran besar.
             Bentuk matanya besar dan menonjol dengan tepi yang berwarna putih. Sirip punggung, sirip
@@ -87,10 +99,10 @@ class Klasifikasi extends Component {
 }
 
 const styles = {
-  // head: { height: 40, backgroundColor: '#90CAF9' },
   title: { flex: 1, backgroundColor: '#90CAF9' },
   row: { height: 28 },
-  text: { marginLeft: 2 }
+  text: { marginLeft: 2 },
+  tallText: { textAlign: 'justify' }
 };
 
 export default Klasifikasi;

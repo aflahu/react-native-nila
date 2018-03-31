@@ -8,7 +8,7 @@ export const gambar = [
   require('../Gambar/penyakit/bintikputih5.jpg'),
   require('../Gambar/penyakit/penducle.jpg'),
   require('../Gambar/penyakit/edwardsiella.jpg'),
-  require('../Gambar/penyakit/fullstreptoccocus.jpg'),
+  require('../Gambar/gejala-compressed/G27.jpg'),
   require('../Gambar/penyakit/fullstreptoccocus.jpg'),
   require('../Gambar/penyakit/tilv2.jpg')
 ];

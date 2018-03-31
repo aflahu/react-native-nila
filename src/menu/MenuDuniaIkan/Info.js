@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ScrollView, Text, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 import { material } from 'react-native-typography';
-// import penyakit from '../../konfig/peyakit';
 
 class Info extends Component {
   ifCompile = () => {
